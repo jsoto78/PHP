@@ -1,0 +1,27 @@
+
+div{
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    position: relative;
+    padding-left: 10px;
+    width: 20%;
+    height: 300px;
+    margin: auto;
+}
+main{
+    margin-top: 60px;
+    display: flex;
+}
+
+.normal{
+   
+    background-color: #943126;
+    color: #FFC300;
+
+}
+.negro{
+  
+    background-color: black;
+    color: white;
+}
