@@ -1,0 +1,61 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+overflow-x: hidden;
+}
+main{
+    margin: auto;
+    width: 80%;
+}
+.navegador {
+    text-align: right;
+    background-color: darkgray;
+    padding: 20px;
+    margin-bottom: 20px;
+
+}
+
+.anclas {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 400;
+    margin: 5px;
+    height: 20px;
+}
+
+.anclas:hover {
+    text-decoration: none;
+    color: rgb(18, 10, 48);
+    border-bottom: 2px solid rgb(18, 10, 48);
+}
+.footer{
+    vertical-align: middle;
+    padding: 10px;
+    text-align: center;
+    background-color: darkgray;
+    width: 100%;
+}
+.divimg{
+    border-radius: 50%;
+}
+
+.divr{
+    direction: rtl;
+}
+.divtxt{
+    margin: 20px;
+}
+.logoba{
+    padding: 10px;
+}
+.spannombre{
+    font-weight: 600;
+}
+.nolink{
+    text-decoration: none;
+    color: #fff;
+}
+.nolink:hover{
+
+    color: #000;
+}
