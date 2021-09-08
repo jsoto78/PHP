@@ -1,0 +1,10 @@
+link a poner en el head del html
+
+<script src="https://kit.fontawesome.com/8552914272.js" crossorigin="anonymous"></script>
+
+en el html puedo poner una etiqueta ancla que en su contenido ademas de la palabra INICIO tiene una etiqueta i
+la etiqueta i con la clase la saco de la pagina de los iconos :
+
+https://fontawesome.com/v5.15/icons?d=gallery&p=2
+
+ <a href="#"> <i class="fas fa-align-justify"></i> Inicio</a>

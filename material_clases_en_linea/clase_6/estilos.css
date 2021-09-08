@@ -1,0 +1,37 @@
+
+/* selectores
+
+tipos:
+selectores simples
+elementales / de atributos
+
+elementales : universal *{}
+              de tipo o de etiqueta body{}
+
+
+
+
+
+
+*/
+/*
+*{
+    background-color: aqua;
+}
+*/
+body{
+    background-color: blueviolet;
+}
+
+#nav{
+    background-color: darkorange;
+}
+
+.contenedor{
+    background-color: darksalmon;
+}
+
+.section{
+    background-color: deeppink;
+}
+

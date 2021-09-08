@@ -1,0 +1,101 @@
+
+/*
+Una pseudoclase CSS es una palabra clave que se añade a los selectores 
+y que especifica un estado especial del elemento seleccionado. 
+
+Las pseudoclases son selectores que definen el estado de una etiqueta.
+:active, :hover, :link, :visited
+Podemos clasificarlas según:
+
+Válidas para cualquier etiqueta. :hover y :active
+Sólo validas para etiquetas de tipo enlace. :link, :visited
+
+Tienen las siguientes utilidades:
+
+:hover, indica una etiqueta cuyo estado es tener el ratón encima. Sirve para cualquier etiqueta.
+:active, indica una etiqueta cuyo estado es tener el ratón pulsado encima. Sirve para cualquier etiqueta.
+:visited, indica un enlace que ya ha sido visitado previamente. Sólo sirve con etiquetas de tipo <a>
+:link, indica que un enlace todavía no ha sido visitado. Sólo sirve con etiquetas de tipo <a>.
+:root  /*equivalente al selector html{}*/
+/*:first-child  el primer hijo. un hijo es una etiqueta anidada dentro de otra. */
+/*:last-child  el último hijo */
+/* :not(p);  que no sea un párrafo*/
+/* :last-of-type  el último elemento del tipo indicado*/
+/* :nth-child(2) todos los elementos hijo que sean el segundo*/
+/* :nth-child-first todos los elementos hijo que sean el primero*/
+/* nth-child-last  todos los elementos hijo que sean el segundo*/
+/*
+mas pseudoclases
+https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes*/
+
+
+
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+   background-color: grey;
+}
+
+a{
+    text-decoration:none;
+    color:#000;
+}
+
+a,div{
+    border:1px solid #000;
+    padding:16px;
+    width:120px;
+    display:inline-block;
+    text-align:center;
+}
+
+/*:link, indica que un enlace todavía no ha sido visitado. Sólo sirve con etiquetas de tipo <a>.*/
+a:link
+{
+ color:blue;
+}
+/*:visited, indica un enlace que ya ha sido visitado previamente. Sólo sirve con etiquetas de tipo <a>*/
+a:visited 
+{
+ color:blueviolet;
+}
+
+/*:hover, indica una etiqueta cuyo estado es tener el ratón encima. Sirve para cualquier etiqueta.*/
+a:hover, 
+div:hover
+{
+background-color:red;
+}
+/*:active, indica una etiqueta cuyo estado es tener el ratón pulsado encima. Sirve para cualquier etiqueta.*/
+a:active,div:active
+{
+background-color:blue;
+}
+
+
+/*
+
+PSEUDO-ELEMENTOS
+Un pseudo-elemento se añade a un pseudo-selector.
+
+Permite añadir estilos a una parte concreta de un elemento html.
+
+Por ejemplo ::first-letter permite añadir css a la primera letra de un elemento.
+
+Para diferenciarlos de las pseudo-clases el W3C recomienda escribirlos con dos veces dos puntos «::».
+
+A continuación se mencionan algunos de los más comunes:
+
+::before{};
+::after{};
+::first-letter{};
+::first-line{};
+::selection{};
+
+
+
+*/
+

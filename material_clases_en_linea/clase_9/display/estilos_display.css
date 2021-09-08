@@ -1,0 +1,74 @@
+
+
+/*ELEMENTOS EN LÍNEA
+
+Las etiquetas en línea ocupan sólo el ancho de su contenido
+
+y no cambian la distribución del sitio. Es decir, no van a
+
+generar saltos de línea por defecto, ya que su ancho va a
+
+estar determinado por el contenido que lleve dentro.
+
+elementos en bloque:
+
+Las etiquetas de bloque intenta ocupar el 100% del ancho del sitio.
+
+Visualmente generan un salto de línea. Esto se da porque, al ocupar
+
+todo el ancho disponible, no dejan espacio para que entre otro
+
+elemento. Las etiquetas <div> son un ejemplo de etiquetas de bloque
+
+muy utilizadas ya que permiten generar divisiones en nuestro sitio.
+
+
+PROPIEDAD BOX-SIZING
+
+Esta propiedad permite que el modelo de caja sea más fácil de usar, 
+porque descuenta automáticamente del ancho
+ y alto lo que agregamos en relleno y borde. 
+ El único valor que se sigue sumando es el del margin.*/
+body{
+    margin:0px;
+    padding: 0px;
+    
+}
+.contenedor{
+    width: 95%;
+    margin-left: auto;
+    margin-top:auto;
+    margin-top:20px;
+}
+.cuadrado{
+    width: 300px;
+    height: 300px;
+    margin-bottom: 30px;
+    /*none
+     Oculta a un elemento en la visual. 
+     No lo elimina de la estructura de HTML, sólo desaparece de la vista.*/
+    display:none;
+    /*Define un elemento con comportamiento en línea,
+     y no recibe algunas propiedades del modelo de caja.*/
+    display: inline;
+     /*Define un elemento con comportamiento de bloque, 
+     y puede recibir propiedades del modelo de caja..*/
+     display: block;
+    /*Define un elemento con comportamiento de semi-bloque.
+     Puede recibir propiedades del modelo de caja, 
+    y también comparte propiedades de elementos de línea.*/
+    display:inline-block;
+
+    margin-right: 10px;
+    font-size: 40px;
+}
+
+.color-rojo{
+    background-color:red;
+    color:yellow;
+}
+
+.color-negro{
+    background-color:black;
+    color:white;
+}

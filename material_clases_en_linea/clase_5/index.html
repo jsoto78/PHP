@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css</title>
+    <!--de esta forma estamos relacionando el html con una hoja de estilos-->
+    <link rel="stylesheet" href="estilos.css">
+    <!--cdn herramientas en el servidor-->
+    <script src="https://kit.fontawesome.com/8552914272.js" crossorigin="anonymous"></script>
+
+      <!--estilos dentro del documento html, sirve en caso de maquetación de mails
+      no se recomienda que se haga en una pagina ya que el objetivo de css es no repetir codigo, y aca
+    se tendria que modificar los stylos por cada documento que hacemos-->
+    <style>
+        /* 
+        *{
+           background-color: burlywood;
+        }
+        */
+       
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo_codo_a_codo.png" alt="logo..">
+        <nav>
+            
+            <a href="#"><i class="fas fa-align-justify"></i>inicio</a>
+            <a href="#">quienes somos</Q></a>
+            <a href="#">Galeria</a>
+            <a href="#">Enlace</a>
+            
+        </nav>
+        
+       
+    </header>
+    <main>
+        <section class="sec_1">
+
+            <img src="imagen_sec_codo.jpg" alt="img_codo_a_codo...">
+            <h2>Titulo del section </h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Doloremque fugiat doloribus quasi consequatur cum ipsam ullam quidem delectus quo minima.
+                 Eum, neque? Culpa dicta maiores optio ipsum, sequi nihil voluptate!
+            </p>
+
+        </section>
+        <h1 style="color: blue;" >Probando CSS</h1>
+       <div class="container">
+            <p class="parrafo-1">
+                parrafo que tiene una class parrafo-1
+            </p>
+            <p class="parrafo-1bis">
+                parrafo que tiene una class diferente parrafo-1bis
+            </p>
+
+       </div>
+
+       <div id="div">
+           <h2>Titulo del segundo div sin estilos en linea</h2>
+            <p id="parrafo-2">
+                parrafo que tiene un id parrafo-2
+            </p>
+            <p class="parrafo-3">
+                parrafo hijo siguiente con class parrafo-3
+            </p>
+       </div>
+
+       <div>
+        <h2 style="font-family: Georgia, 'Times New Roman', Times, serif; color: crimson;">Titulo del ultimo div que tiene estilo en linea</h2>
+        <p>
+            parrafo que no tiene id ni class
+        </p>
+        <p>
+            otro parrafo que no tiene id ni class hijos del ultimo div
+        </p>
+       </div>
+
+       <div>
+           <p class="p1">una clase</p>
+           <p class="p2">otra clase</p>
+           <p class="p3">otra clase distinta</p>
+       </div>
+    </main>
+    
+</body>
+</html>

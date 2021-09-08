@@ -1,0 +1,130 @@
+
+
+header{
+    background-color: chocolate;
+}
+
+
+/*
+#idheader img{
+    width: 300px;
+}
+*/
+
+
+.img,
+.img_logo
+{
+    width: 300px;
+   
+}
+
+.img{
+    height: 400px;
+}
+
+[href]{
+    background-color: mediumorchid;
+}
+
+[href="contacto.html"]{
+    background-color: orangered;
+}
+
+[href^="con"]{
+    background-color: rgb(0, 255, 42);
+}
+[href*="tac"]{
+    background-color: rgb(201, 57, 153);
+}
+
+
+[href$="l"]{
+    background-color: steelblue;
+}
+
+.hijo_1 + .hijo_2{
+    background-color: darksalmon;
+}
+
+.hijo_2{
+    background-color: dodgerblue;
+}
+
+/* selectores agrupados */
+/* .text,
+.text-2,
+.text-3,
+.text-4{
+    background-color: steelblue;
+} */
+
+/* selector universal  */
+/* *{
+    background-color: lightcoral;
+}
+
+*/
+
+/* selectores de etiquetas */
+
+/*
+h1{
+    background-color: lightcyan;
+}
+
+p{
+    background-color: lightgreen;
+}
+
+ul{
+    background-color: red;
+}
+
+li{
+    background-color: blue;
+} */
+
+/* selector por id*/
+/* #title{
+    background-color: lightgreen;
+}
+*/
+
+/* selector de clases */
+
+/*
+.title{
+    background-color: lightsalmon;
+}
+
+.text{
+    background-color: limegreen;
+} */
+ 
+/*selectores de atributos*/
+/*[href]{
+    background-color: mediumorchid;
+}
+
+[href="https://google.com"]{
+    background-color: orangered;
+}
+
+[href^="color"]{
+    background-color: red;
+}
+
+[href*="modo"]{
+    background-color: green;
+}
+
+[href$="azul"]{
+    background-color: steelblue;
+}
+
+[lang|="en"]{
+    background-color: magenta;
+} */
+
+

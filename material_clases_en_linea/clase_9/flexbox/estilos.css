@@ -1,0 +1,128 @@
+
+/*Flexbox
+
+Es una metodología de CSS que permite maquetar un sitio web utilizando una estructura de filas y columnas.
+Cuando usamos flotación para posicionar un elemento en un sitio web, 
+el mismo deja de formar parte del flujo natural de la estructura de elementos. 
+Esto genera solapamiento de cajas y estructuras difíciles de mantener.
+
+Flexbox propone un único flujo,
+ en el que dispondremos de los elementos con mayor libertad para distribuir, 
+ redimensionar y reordenar cada uno de ellos en función de ese flujo de trabajo.
+
+Estructura Básica de Flexbox
+
+Esta metodología propone una estructura basada en el uso de un contenedor padre (Flex-container) 
+y sus elementos hijos (Flex-items).
+
+Para empezar a trabajar con flexbox tenemos que definir un flex-container.
+ Para eso usamos la propiedad con el valor .
+  De esta forma estamos habilitando un contexto flex para trabajar con los hijos directos del elemento.
+
+.contenedor-padre {
+
+display: flex;
+
+}
+
+Estructura:
+
+Cuando hablamos de un flex-container, hablamos de un elemento HTML que contiene a uno o más elementos. 
+A estos elementos anidados, los llamamos flex-items.
+Es en el flex-container en donde configuramos la mayoría de las propiedades flex
+*/
+
+body{
+    margin:0px;
+    padding:0px;
+}
+
+
+.contenedor{
+    background-color: blueviolet;
+    /*al contenedor le decimos que tome el 100% del tamaño de su contenedor, en este caso el main y el body*/
+    width: 100%;
+    margin-top:1%;
+    /*al contenedor le decimos que el contenido sera flex es decir flexible*/
+    display: flex;
+    /*estas propiedades se pueden usar si el display es flex*/
+    /*el contenido del contenedor se va a justificar separando cada elemento con la misma distancia, pero partiendo
+    del eje x 0 y 0*/
+    justify-content: space-between;
+    /*el contenido del contenedor se va a justificar a la izquierda*/
+     justify-content: left;
+     /*el contenido del contenedor se va a justificar a la izquierda*/
+     justify-content: right;
+      /*el contenido del contenedor se va a justificar en el centro*/
+     justify-content: center;
+      /*el contenido del contenedor se va a justificar en la base del conetenedor*/
+     justify-content:baseline;
+      /*el contenido del contenedor se va a justificar al final*/
+     justify-content: flex-end;
+
+     /*el contenido del contenedor se va a justificar al inicio por defecto*/
+     justify-content: flex-start;
+
+      /*el contenido del contenedor se va a justificar con el mismo espacio entre todos los elementos
+      El primer ítem tendrá una unidad de espacio contra el borde del contenedor,
+       y dos unidades de espacio contra el siguiente ítem, 
+       porque el mismo tiene su propio espacio que se aplica. Lo mismo sucede con el último ítem.*/
+     justify-content: space-around;
+
+     /*alineacion de los items verticalmente */
+     /*Los ítems se ajustan para abarcar todo el contenedor. Si el cross axis es vertical, 
+      se ajustan en función de la columna. 
+      Si el cross axis es horizontal, se ajustan en función de la fila.
+      align-items: stretch */
+
+     /*Los ítems se alinean al centro del eje transversal.
+       align-items: center; */
+
+     /* Los ítems se alinean al inicio del eje transversal. 
+      align-items: flex-start; */
+
+      /* Los ítems se alinean al final del eje transversal.
+      align-items: flex-end ;*/
+
+      /*esta opcion hace que el contenido entre en la pantalla ,haciendo un salto de linea de ser necesario en el
+      ultimo elemento*/
+     /* flex-wrap: wrap;*/
+
+     /* flex-direction:row; Los ítems se disponen en el eje x, de izquierda a derecha.*/
+     /* flex-direction:row;*/
+
+     /* flex-direction: row-reverse; Los ítems se disponen en el eje x, de derecha a izquierda.*/
+    /* flex-direction: row-reverse;*/
+      
+     /* flex-direction: column; Los ítems se disponen en el eje y, de arriba hacia abajo.*/
+    /*  flex-direction: column;*/
+
+     /*flex-direction: column-reverse; Los ítems se disponen en el eje y, de arriba hacia abajo.*/
+    /*  flex-direction: column-reverse;*/
+     
+     
+
+}
+
+.color-rojo{
+    background-color: red;
+    color:yellow;
+}
+
+.color-negro{
+    background-color: black;
+    color:white;
+}
+
+
+
+.cuadrado{
+   /* width: 300px;
+    height:300px;*/
+    /*ocupa el 24% del contenedor, que tiene que tener un tamaño establecido, le pusimos al contenedor el 
+    100% de la pagina en ancho*/
+    width: 24%;
+    /*ocupa el 50% de pagina*/
+    height: 50vh;
+    font-size: 30px;
+}

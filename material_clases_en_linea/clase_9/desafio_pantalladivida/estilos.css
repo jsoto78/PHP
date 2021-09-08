@@ -1,0 +1,65 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap');
+
+body{
+    margin:0px;
+    padding:0px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.izquierda{
+
+    background-color: #fcd21d;
+    width: 50%;
+    height: 100vh;
+    
+}
+
+.derecha{
+    background-image: url("https://picsum.photos/800?random=1");
+    background-position: center;   
+    background-size: cover;
+    width: 50%;
+    height:100vh ;
+}
+
+#pantalla_dividida{
+    display: flex;
+}
+
+.creativo{
+    color:white;
+}
+
+h1{
+    font-size: 60px;
+    width: 50%;
+    margin:auto;
+    margin-top:50px;
+    margin-bottom: 50px;
+    margin-left:80px;
+}
+
+p{
+    font-size: 19px;
+    line-height: 30px;
+   
+    width: 50%;
+    margin:auto;
+    margin-left:80px;
+}
+.boton{
+    margin-left:80px;
+}
+
+a{
+    border: 3px solid white;
+    text-decoration: none;
+    padding: 20px;
+    color:white;
+    border-radius: 30px;
+    font-weight: bold;
+    display:inline-block;
+    margin-top:30px;
+}
