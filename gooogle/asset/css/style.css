@@ -100,6 +100,12 @@ display: flex;
     text-decoration: none;
     margin-right: 20px;
 }
+.footergoogle nav a:hover
+{
+
+    text-decoration: underline;
+
+}
 .footergoogle p{
     padding: 7px 30px;
     border-bottom: 1px solid #fafcff ;
