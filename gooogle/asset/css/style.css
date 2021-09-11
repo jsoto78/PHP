@@ -54,11 +54,11 @@ border-radius: 50%;
 }
 
 .doodle{
-    margin: 15% auto 10px;
-    width: 60%;
+    margin: 10% auto 10px;
+    width: 500px;
 }
 .divbuscar{
-    width: 70%;
+    max-width: 584px;
     margin: auto;
     margin-top: 20px;
 }
@@ -116,6 +116,9 @@ display: flex;
 .fa-share-alt{
     color: #3d5483;
     opacity: 0.5;
+    float: right;
+    bottom: 35px;
+    position: relative;
 }
 .fa-share-alt:hover{
     color: #3d5483;
@@ -173,4 +176,8 @@ color: #3c4043;
 }
 .divbotones p a:hover{ 
     text-decoration:underline;
+}
+.imgdoodle{
+    width: 100%;
+    margin: auto;
 }
