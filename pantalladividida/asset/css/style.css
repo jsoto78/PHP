@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+}
+.main{
+    height: 100%;
+    flex: auto;
+}
+
+.main div{
+    height: 100vh;
+}
+.diviz{
+width: 50%;
+float: left;
+background-color: #fdd306;
+}
+.divder{
+    background-image: url('../img/derecha.jpeg');
+    width: 50%;
+    float: right;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.diviz h2{
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 40px;
+    padding: 0 40px;
+    
+}
+
+.diviz p{
+    width: 80%;
+    padding-left: 40px;
+}
+.dise{
+    margin-top: 30%;
+    margin-bottom: 10px;
+}
+.creativo{
+    color: #fff;
+}
+.divbtn{
+    margin-top: 40px;
+    padding-left: 40px;
+}
+.btnmasinfo{
+    color: #fff;
+    height: 45px;
+    border-radius: 25px;
+    background-color: transparent;
+    border: #fff solid 1px ;
+    padding: 10px;
+}
