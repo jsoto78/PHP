@@ -1,0 +1,67 @@
+.navbar-right{
+    flex: revert;
+}
+.bg-secondary{
+    color: #fff ;
+}
+
+.comprar{
+  
+    color: green !important;
+}
+.nav-link{
+    opacity: 0.6;
+}
+.container-fluid.inicio{
+    margin: 0 !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../img/ba1.jpg");
+}
+.izq{
+    height: 600px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../img/honolulu.jpg");  
+}
+.der{
+    background-color: #262626;
+}
+.overlay{
+    background: rgba(0, 0, 0, 0.5);
+    height: 600px;
+}
+.textos{
+    color: #fff;
+
+    float: right;
+}
+.btn-light {
+    color: #fff;
+    background-color: transparent !important;
+    border-color: #f8f9fa;
+}
+.label {
+    padding: 3px 10px;
+    line-height: 13px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 75%;
+    text-transform: capitalize !important;
+}
+.label-warning {
+    background-color: #ffbc34;
+}
+.label-info {
+    background-color: #0dcaf0;
+}
+.label-danger {
+    background-color: #dc3545;
+}
+.label-dark {
+    background-color: #adb5bd;
+}
+.label-rounded {
+    border-radius: 4px;
+}
