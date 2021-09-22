@@ -65,3 +65,51 @@
 .label-rounded {
     border-radius: 4px;
 }
+.dertext{
+    font-size: 0.8em;
+    font-weight: 300;
+}
+.form1{
+    width: 70%;
+    margin: auto;
+}
+.btn-light:hover {
+    color: #000;
+    background-color: #f9fafb !important;
+    border-color: #f9fafb;
+}
+.navfooter{
+     background: #1d5271;;
+     height: 50px;
+    width: 100%;
+
+}
+.navfooter nav{
+padding: 20px 0 0 0;
+width: 100%;
+display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.navfooter nav a
+{
+    font-size: 14px;
+    font-family: arial,sans-serif;
+    color: #fff;
+   
+    opacity: 0.87;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.navfooter nav a:hover
+{
+
+    text-decoration: underline;
+
+}
+.navfooter p{
+    padding: 7px 30px;
+    border-bottom: 1px solid #fafcff ;
+    font-size: 15px;
+    color: #70757a;
+}
