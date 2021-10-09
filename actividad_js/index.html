@@ -5,24 +5,205 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicios JS</title>
-    <link href="//cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
- 
-    <script src="./js/main.js">
-    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/main.js"> </script>
+       
+    <style>
+        .btn-group{
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <main>
-        <div class="btn-group" role="group" aria-label="Basic example">
-                <button  class="btn btn-secondary" onclick="miNombre()">Mi nombre</button>
-                <button  class="btn btn-secondary" onclick="miFrase()">Ingresar Frase</button>
-                <button  class="btn btn-secondary" onclick="tuNombre()">Ingresar Tu Nombre</button>
-                <button  class="btn btn-secondary" onclick="tuNombreyApellido()">Ingresar Tu Nombre y Apellido</button>
+
+             <div class="row">
+                 <div class="col">
+                    <div class="btn-group" role="group" >       
+                        <button  class="btn btn-secondary" onclick="miNombre()">Ejercicio 1</button>
+                        <button  class="btn btn-secondary" onclick="miFrase()">Ejercicio 2</button>
+                        <button  class="btn btn-secondary" onclick="tuNombre()">Ejercicio 3</button>
+                        <button  class="btn btn-secondary" onclick="tuNombreyApellido()">Ejercicio 4</button>
+                    </div>
+                 </div>
+             </div>
+             <br>
+             <div class="row">
+                <div class="col">
+                    <div class="btn-group" role="group" >       
+             
+                        <button  class="btn btn-secondary" onclick="tuEdad()">Ejercicio 5</button>
+                        <button  class="btn btn-secondary" onclick="tuBmi()">Ejercicio 6</button>
+                        <button  class="btn btn-secondary" onclick="cantidadDeVentanas()">Ejercicio 7</button>
+                        <button  class="btn btn-secondary" onclick="soyHumano()">Ejercicio 8</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <div class="btn-group" role="group" >       
+                        <button  class="btn btn-secondary" onclick="miGustoPizza()">Ejercicio 9</button>
+                        <button  class="btn btn-secondary" onclick="minions()">Ejercicio 10</button>
+                        <button  class="btn btn-secondary" onclick="triangulo()">Ejercicio 11</button>
+                        <button  class="btn btn-secondary" onclick="librasToKilos()">Ejercicio 12</button>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <div class="row">
+                <div class="col">
+                    <div class="btn-group" role="group" >       
+                        <button  class="btn btn-secondary" onclick="miSueldo()">Ejercicio 13</button>
+                        <button  class="btn btn-secondary" onclick="miNota()">Ejercicio 14</button>
+                        <button  class="btn btn-secondary" onclick="sueldoCategoria()">Ejercicio 15</button>
+                        <button  class="btn btn-secondary" type="button"  data-bs-toggle="modal" 
+                        data-bs-target="#modalDatos">Ejercicio 16</button>
+                        <button  class="btn btn-secondary" type="button"  data-bs-toggle="modal" 
+                        data-bs-target="#modalEnteros">Ejercicio 17</button>
+                    </div>
+                </div>
+            </div>
                 
-                
-       </div>
+         
+<br>
+         
+<br>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalDatos" tabindex="-1" aria-labelledby="modalDatoslabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalDatoslabel">Ingresa Datos</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-1">
+
+                </div>
+                <div class="col-10">
+                    <label for="matricula" class="form-label">Matricula</label>
+                    <input type="text" class="form-control"  name="matricula" id="matricula">
+                </div>
+                <div class="col-1">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+
+                </div>
+
+                <div class="col-2">
+                    <label for="matricula" class="form-label">Nota1</label>
+                    <input type="text" class="form-control"  name="n1" id="n1">
+                </div>
+                <div class="col-2">
+                    <label for="matricula" class="form-label">Nota2</label>
+                    <input type="text" class="form-control"  name="n2" id="n2">
+                </div>
+                <div class="col-2">
+                    <label for="matricula" class="form-label">Nota3</label>
+                    <input type="text" class="form-control"  name="n3" id="n3">
+                </div>
+                <div class="col-2">
+                    <label for="matricula" class="form-label">Nota4</label>
+                    <input type="text" class="form-control"  name="n4" id="n4">
+                </div>
+                <div class="col-2">
+                    <label for="matricula" class="form-label">Nota5</label>
+                    <input type="text" class="form-control"  name="n5" id="n5">
+                </div>
+                <div class="col-1">
+
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="miNotaMatricula()" >Calcular</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalEnteros" tabindex="-1" aria-labelledby="modalEnteroslabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalEnteroslabel">Ingresa Datos</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+           
+                <div class="row">
+                    <div class="col-1">
+    
+                    </div>
+    
+                    <div class="col-3">
+                        <label for="matricula" class="form-label">Nro 1</label>
+                        <input type="text" class="form-control"  name="nro1" id="nro1">
+                    </div>
+                    <div class="col-3">
+                        <label for="matricula" class="form-label">Nro 2</label>
+                        <input type="text" class="form-control"  name="nro2" id="nro2">
+                    </div>
+                    <div class="col-3">
+                        <label for="matricula" class="form-label">Nro 3</label>
+                        <input type="text" class="form-control"  name="nro3" id="nro3">
+                    </div>
+                 
+                    <div class="col-2">
+    
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="nrosEnteros()" >Calcular</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    <!-- Modal modalRes -->
+    <div class="modal fade" id="modalRes" tabindex="-1" aria-labelledby="modalReslabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalReslabel">Resultados</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-1">
+    
+                    </div>
+                    <div class="col-10">
+                  
+                        <p id="res"></p>
+                    </div>
+                    <div class="col-1">
+    
+                    </div>
+                </div>
+          
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
+
 </body>
 </html>
