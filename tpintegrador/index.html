@@ -9,7 +9,7 @@
 
 
     <link rel="stylesheet" href="./assets/css/style.css">
-
+<script src="./assets/js/main.js"></script>
 </head>
 <body>
     <header class="navhead">
@@ -39,7 +39,7 @@
                     <a class="nav-link" href="#">Conviértete en orador</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link comprar" href="#">Comprar tickets</a>
+                    <a class="nav-link comprar" href="#tickets">Comprar tickets</a>
                 </li>
                 </ul>
                 
@@ -78,7 +78,6 @@
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
-
             <div class="card h-100">
                 <img src="./assets/img/steve.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -86,30 +85,27 @@
                         <span class="badge bg-warning text-dark">JavaScript</span>   
                         <span class="badge bg-info">React</span>
                     </div>
-                  
                   <h5 class="card-title">Steve Jobs</h5>
                   <p class="card-text fw-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aliquam quae amet maxime molestias necessitatibus et labore voluptates quo, blanditiis sint natus eum provident corporis cum quidem tenetur nisi quia!</p>
                 
                 </div>
             </div>
         </div>
-<div class="col">
-            
-    <div class="card h-100">
-        <img src="./assets/img/bill.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <div class="mb-3">
-                <span class="badge bg-warning text-dark">JavaScript</span>   
-                <span class="badge bg-info">React</span>
-            </div>
-          <h5 class="card-title">Bill Gates</h5>
-          <p class="card-text fw-light">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque maxime fugit totam voluptatibus maiores suscipit obcaecati nobis rem enim, tempore ut est, molestiae quidem aperiam repudiandae necessitatibus commodi expedita! Repellat.</p>
-      
-        </div>
-    </div>
-        </div>
         <div class="col">
+            <div class="card h-100">
+                <img src="./assets/img/bill.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <span class="badge bg-warning text-dark">JavaScript</span>   
+                        <span class="badge bg-info">React</span>
+                    </div>
+                <h5 class="card-title">Bill Gates</h5>
+                <p class="card-text fw-light">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque maxime fugit totam voluptatibus maiores suscipit obcaecati nobis rem enim, tempore ut est, molestiae quidem aperiam repudiandae necessitatibus commodi expedita! Repellat.</p>
             
+                </div>
+            </div>
+                </div>
+        <div class="col">
             <div class="card h-100">
                 <img src="./assets/img/ada.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -123,6 +119,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 </div>
@@ -170,12 +167,12 @@
         <div class="row mb-3">
             <div class="col-6">
                 <label for="exampleFormControlInput1" class="form-label"></label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nombre">
+                <input type="email" class="form-control" id="exampleFormControlInput1" required placeholder="Nombre">
               </div>
            
               <div class="col-6">
                 <label for="exampleFormControlInput1" class="form-label"></label>
-                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Apellido">
+                <input type="text" class="form-control" id="exampleFormControlInput2" required placeholder="Apellido">
               </div>
         </div>
     <div class="row mb-3">
@@ -192,6 +189,110 @@
             <button class="btn btn-success2" type="submit">Enviar</button>
           </div>
     </form>
+
+    <section id="tickets" class="oradores" >   
+        <div class="container-fluid">
+            <div class="row mb-3 rcat">
+                <div class="col">
+                    <div class="card border border-primary text-center h-100 p-3">
+                        <div class="m-auto">
+                            <h3 class="fs-5">
+                                Estudiante 
+                            </h3>
+                            <p class="fs-6 fw-lighter">Tienen un descuento</p>
+                            <span>80%</span>
+                            <p class="text-muted fw-lighter pdocumenta mt-3">* presentar documentación</p>
+                        </div>
+                   
+                    </div>
+                </div>
+          
+                    <div class="col">
+                        <div class="card border border-success text-center h-100 p-4">
+                            <div class="m-auto">
+                            <h3 class="fs-5">
+                                Trainee 
+                            </h3>
+                            <p class="fs-6 fw-lighter">Tienen un descuento</p>
+                            <span>50%</span>
+                            <p class="text-muted fw-lighter pdocumenta mt-3">* presentar documentación</p>
+                        </div>
+                        </div>
+                </div>
+                     <div class="col">
+                        <div class="card border border-warning text-center h-100 p-4">
+                            <div class="m-auto">
+                            <h3 class="fs-5">
+                                Junior 
+                            </h3>
+                            <p class="fs-6 fw-lighter">Tienen un descuento</p>
+                            <span>15%</span>
+                            <p class="text-muted fw-lighter pdocumenta mt-3">* presentar documentación</p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+            <div class="row">
+            <div class="col col-12 align-self-center mt-1">
+                <p class="text-center text-uppercase text mb-0 fw-lighter">Venta</p>
+                <h3 class="text-center text-uppercase fs-3 fw-light">valor de ticket $200</h3>
+            
+                        </div>
+            </div>
+
+            <form action="" class="form2">
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <label for="exampleFormControlInput1" class="form-label"></label>
+                        <input type="email" class="form-control" id="txtnombre" required minlength="2" placeholder="Nombre">
+                      </div>
+                   
+                      <div class="col-6">
+                        <label for="exampleFormControlInput1" class="form-label"></label>
+                        <input type="text" class="form-control" id="txtapellido"  required minlength="2"  placeholder="Apellido">
+                      </div>
+                </div>
+            <div class="row mb-3">
+                <div class="col-12">
+                    <label for="exampleFormControlInput1" class="form-label"></label>
+                    <input type="email" class="form-control" id="txtcorreo" minlength="2" required placeholder="Correo">
+                </div>
+               
+            </div>
+            <div class="row mb-3">
+                <div class="col-6">
+                    <label for="exampleFormControlInput1" class="form-label">Cantidad</label>
+                    <input type="email" class="form-control" required id="txtcant" minlength="1"  placeholder="Cantidad">
+                  </div>
+               
+                  <div class="col-6">
+                    <label for="exampleFormControlInput1" class="form-label">Categoria</label>
+                    <select class="form-select" id="selcategoria"  >
+                        <option value="0.8">Estudiante</option>
+                        <option value="0.5">Trainee</option>
+                        <option value="0.15">Junior</option>
+                    </select>
+                  </div>
+            </div>
+            <div class="alert alert-primary" role="alert">
+                Total a pagar $ <span id="total"> </span>
+              </div>
+            <div class="row mb-3">
+                <div class="col-6 d-grid gap-2  mt-3 mb-3">
+                    <button class="btn btn-success2" onclick="borrar()" type="button">Borrar</button>
+                  </div>
+                  <div class="col-6 d-grid gap-2  mt-3 mb-3">
+
+                 
+                    <button class="btn btn-success2" onclick="calcular()"  type="button">Resumen</button>
+                  </div>
+                </div>
+            
+            </form>
+
+        </div>
+    </section>
 </main>
     <footer class="navfooter">
         <nav class="navbar">

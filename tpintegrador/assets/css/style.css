@@ -18,7 +18,9 @@
     font-size: 0.5em;
     margin-bottom: 0;
 }
-
+.pdocumenta{
+    font-size: 0.8em;
+}
 .container-fluid.inicio{
     margin: 0 !important;
     background-position: center;
@@ -111,7 +113,9 @@ nav .row{
     width: 90%;
 
 }
-
+.rcat{
+    height: 250px;
+}
 nav .row .col{
     margin: auto;
 }
@@ -119,6 +123,10 @@ nav .row .col{
     background-color: #94cc3c;
     border-color: #94cc3c;
     color: #fff;
+}
+section.oradores{
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 @media (max-width: 767px) {
