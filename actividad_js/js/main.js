@@ -98,153 +98,153 @@ function minions() {
 
     let laMisma = false;
     console.log(laMisma);
-     laMisma = "Hola";
+    laMisma = "Hola";
     console.log(laMisma);
-     laMisma = 0;
+    laMisma = 0;
     console.log(laMisma);
-     laMisma = "Minions";
+    laMisma = "Minions";
     console.log(laMisma);
 }
-function triangulo(){
+function triangulo() {
     //Crear un programa que dado la base y la altura de un triangulo calcule la superficie y el perímetro.
 
     let base = Number(prompt("Ingrese la medida de la base"));
     let altura = Number(prompt("Ingrese la medida de la base"));
-    let superficie = (base * altura)/2;
-    let hipotenusa = Math.sqrt((base**2 )+ (altura**2));
+    let superficie = (base * altura) / 2;
+    let hipotenusa = Math.sqrt((base ** 2) + (altura ** 2));
     let perimetro = hipotenusa + base + altura;
 
-if(!isNaN(base) &&  !isNaN(altura)){
-    console.log("la superficie es",superficie);
-    console.log("el perimetro es",perimetro); 
-}else{
-    console.log("ingresaste datos incorrectos");
-}
+    if (!isNaN(base) && !isNaN(altura)) {
+        console.log("la superficie es", superficie);
+        console.log("el perimetro es", perimetro);
+    } else {
+        console.log("ingresaste datos incorrectos");
+    }
 
 
 }
-function librasToKilos(){
+function librasToKilos() {
     //Crear un programa que, al pasar los datos del 
     //peso de una persona en libras, haga la conversión a kilogramos
     //1 Libras = 0.4536 Kilos
     let pesoLibras = Number(prompt("Ingrese su peso en libras"));
 
-if(!isNaN(pesoLibras)){
-    let pesoKilos = pesoLibras * 0.4536 ;
-    console.log("tu peso en Kg es",pesoKilos.toFixed(2));
+    if (!isNaN(pesoLibras)) {
+        let pesoKilos = pesoLibras * 0.4536;
+        console.log("tu peso en Kg es", pesoKilos.toFixed(2));
 
-}else{
-    console.log("ingresaste datos incorrectos");
-}
+    } else {
+        console.log("ingresaste datos incorrectos");
+    }
 
 }
-function miSueldo(){
+function miSueldo() {
 
-// Crear un programa que al ingresar el sueldo de un trabajador, 
-// aplique el 15% de aumento y lo muestre en la consola.
-let sueldoBase = Number(prompt("Ingresa tu sueldo"));
-if(!isNaN(sueldoBase)){
-    let sueldoAumento = sueldoBase * 1.15 ;
-    console.log("tu sueldo sera de $",sueldoAumento.toFixed(2));
+    // Crear un programa que al ingresar el sueldo de un trabajador, 
+    // aplique el 15% de aumento y lo muestre en la consola.
+    let sueldoBase = Number(prompt("Ingresa tu sueldo"));
+    if (!isNaN(sueldoBase)) {
+        let sueldoAumento = sueldoBase * 1.15;
+        console.log("tu sueldo sera de $", sueldoAumento.toFixed(2));
 
-}else{
-    console.log("ingresaste datos incorrectos");
+    } else {
+        console.log("ingresaste datos incorrectos");
+    }
 }
-}
-function miNota(){
-// Crear un programa que al ingresar una nota de un alumno, muestre con un alert()
-//  si el alumno esta “aprobado” (se aprueba con una nota mayor a 7) y “reprobado” en caso contrario
+function miNota() {
+    // Crear un programa que al ingresar una nota de un alumno, muestre con un alert()
+    //  si el alumno esta “aprobado” (se aprueba con una nota mayor a 7) y “reprobado” en caso contrario
 
-let nota = Number(prompt("Ingresa la nota del alumno"));
-if(!isNaN(nota) ){
- if(nota > 7){
-     alert("aprobado");
- }else{
-    alert("reprobado");
- }
-}else{
-    console.log("ingresaste datos incorrectos");
+    let nota = Number(prompt("Ingresa la nota del alumno"));
+    if (!isNaN(nota)) {
+        if (nota > 7) {
+            alert("aprobado");
+        } else {
+            alert("reprobado");
+        }
+    } else {
+        console.log("ingresaste datos incorrectos");
+    }
 }
-}
-function sueldoCategoria(){
+function sueldoCategoria() {
     //Crear un programa tal que dado como datos la categoría y el sueldo de un trabajador, calcule el aumento 
     // correspondiente teniendo en cuenta la siguiente tabla. Mostrar con un Alert() la categoría y el nuevo sueldo
 
     let categoria = prompt("Ingrese la categoria (debe ser un numero del 1 al 6");
     let sueldo = Number(prompt("Ingrese sueldo"));
 
-        //     categoría
-        // 1 15%
-        // 2 10%
-        // 3 8%
-        // 4 7%
-    if(!isNaN(sueldo)){
+    //     categoría
+    // 1 15%
+    // 2 10%
+    // 3 8%
+    // 4 7%
+    if (!isNaN(sueldo)) {
         switch (categoria) {
             case '1':
                 alert("El nuevo sueldo para la categoria " + categoria + " es de $ " + (sueldo * 1.15).toFixed(2));
-            break;
+                break;
             case '2':
                 alert("El nuevo sueldo para la categoria " + categoria + " es de $ " + (sueldo * 1.10).toFixed(2));
-            break;
+                break;
             case '3':
                 alert("El nuevo sueldo para la categoria " + categoria + " es de $ " + (sueldo * 1.08).toFixed(2));
-            break;
+                break;
             case '4':
                 alert("El nuevo sueldo para la categoria " + categoria + " es de $ " + (sueldo * 1.07).toFixed(2));
-            break;
-        
+                break;
+
             default:
-              
+
                 break;
         }
-    }else{
+    } else {
         alert("Ingrese un sueldo numerico");
     }
-    
-  
+
+
 }
-function miNotaMatricula(){
+function miNotaMatricula() {
     // Crear un programa tal que dado como datos la matrícula y 5 calificaciones de un alumno; 
     // imprima la matricula, el promedio y la palabra “aprobado” si el alumno tiene un promedio mayor 
     // o igual que 7, y la palabra “no aprobado” en caso contrario
-  let matricula = document.getElementById('matricula').value;
-  let n1 = document.getElementById('n1').value;
-  let n2 = document.getElementById('n2').value;
-  let n3 = document.getElementById('n3').value;
-  let n4 = document.getElementById('n4').value;
-  let n5 = document.getElementById('n5').value;
-  let promedio = (parseFloat(n1) + parseFloat(n2) + parseFloat(n3) + parseFloat(n4) + parseFloat(n5)) / 5;
-  let msg;
-  let p = document.getElementById('res');
-  let modal1 = new bootstrap.Modal(document.getElementById('modalDatos'));
-  let modal2 = new bootstrap.Modal(document.getElementById('modalRes'));
+    let matricula = document.getElementById('matricula').value;
+    let n1 = document.getElementById('n1').value;
+    let n2 = document.getElementById('n2').value;
+    let n3 = document.getElementById('n3').value;
+    let n4 = document.getElementById('n4').value;
+    let n5 = document.getElementById('n5').value;
+    let promedio = (parseFloat(n1) + parseFloat(n2) + parseFloat(n3) + parseFloat(n4) + parseFloat(n5)) / 5;
+    let msg;
+    let p = document.getElementById('res');
+    let modal1 = new bootstrap.Modal(document.getElementById('modalDatos'));
+    let modal2 = new bootstrap.Modal(document.getElementById('modalRes'));
 
-  if(!isNaN(promedio) ){
-    if(promedio >= 7){
-        msg = "aprobado";
-    }else{
-        msg = "reprobado";
+    if (!isNaN(promedio)) {
+        if (promedio >= 7) {
+            msg = "aprobado";
+        } else {
+            msg = "reprobado";
+        }
+
+
+        p.innerHTML = 'La matricula ' + matricula + " y su promedio es " + promedio + ", su estado " + msg;
+
+
+        modal1.hide();
+        modal2.show();
+
+    } else {
+        console.log("ingresaste datos incorrectos");
+        p.innerHTML = "ingresaste datos incorrectos";
+        modal2.show();
     }
 
-    
-    p.innerHTML = 'La matricula ' + matricula + " y su promedio es " + promedio + ", su estado " + msg;
- 
-  
-    modal1.hide();
-    modal2.show();
-
-   }else{
-       console.log("ingresaste datos incorrectos");
-       p.innerHTML = "ingresaste datos incorrectos";
-       modal2.show();
-   }
-
- 
 
 
 
-    }
-function nrosEnteros(){
+
+}
+function nrosEnteros() {
     //Dado 3 números enteros, 
     // determinar cual de ellos es el mayor, tenga en cuenta que los números pueden ser iguales.
     let n1 = parseInt(document.getElementById('nro1').value);
@@ -253,35 +253,35 @@ function nrosEnteros(){
     let modal2 = new bootstrap.Modal(document.getElementById('modalRes'));
     let msg;
     let p = document.getElementById('res');
-    if(n1 == n2 && n1 == n3){
-        msg = "los 3 numeros son iguales y vale: "+n1;
+    if (n1 == n2 && n1 == n3) {
+        msg = "los 3 numeros son iguales y vale: " + n1;
     }
-    else{
+    else {
 
 
 
-        if(n1 > n2){
-            if(n1>n3){
-                msg = "Numero 1 es el Mayor y vale: "+n1+"";
-            }else{
-                msg = "Numero 3 es el Mayor y vale: "+n3+"";
+        if (n1 > n2) {
+            if (n1 > n3) {
+                msg = "Numero 1 es el Mayor y vale: " + n1 + "";
+            } else {
+                msg = "Numero 3 es el Mayor y vale: " + n3 + "";
             }
         }
         else {
-            if(n1 < n2){
-                if (n2 > n3){
-                    msg = "Numero 2 es el Mayor y vale: "+n2+"";
-                   }
-                   else{
-                    msg = "Numero 3 es el Mayor y vale: "+n3+"";
-                      }
+            if (n1 < n2) {
+                if (n2 > n3) {
+                    msg = "Numero 2 es el Mayor y vale: " + n2 + "";
+                }
+                else {
+                    msg = "Numero 3 es el Mayor y vale: " + n3 + "";
+                }
             }
         }
 
 
 
     }
-    p.innerHTML = msg ;
+    p.innerHTML = msg;
     modal2.show();
 
 }
@@ -290,7 +290,7 @@ function nrosEnteros(){
  * Auxiliares
  */
 
-function mostrarResultado(texto){
+function mostrarResultado(texto) {
     let p = document.getElementById('res');
     let modal = new bootstrap.Modal(document.getElementById('modalRes'));
     p.innerHTML = texto;
@@ -301,7 +301,7 @@ function mostrarResultado(texto){
 /**
  * Nivel 2
  */
-function miSuma(){
+function miSuma() {
     /*
 
     Crear un programa que defina tres variables llamadas “variable_a”, “variable_b” y “variable_resultado”. Cargar las primeras dos con los valores numéricos 33 y 77. Sumar ambas variables 
@@ -315,7 +315,7 @@ function miSuma(){
     mostrarResultado(output);
 }
 
-function nuevoPrmedio(){
+function nuevoPrmedio() {
     /**
      * Crear un programa que defina 5 variables llamadas “a”,“b”...“e” y 
      * una sexta variable llamada “promedio”. Cargar las 5 variables con valores y calcular el 
@@ -328,30 +328,30 @@ function nuevoPrmedio(){
     let e;
     let promedio;
 
-    a=3;
-    b=5;
-    c=9;
-    d=8;
-    e=6;
-    promedio=(a+b+c+d+e)/5;
+    a = 3;
+    b = 5;
+    c = 9;
+    d = 8;
+    e = 6;
+    promedio = (a + b + c + d + e) / 5;
     let output = "el promedio es: " + promedio;
     console.log(output);
     mostrarResultado(output);
 }
 
-function comparoNotas(){
+function comparoNotas() {
     /**
      * Crear un programa que defina las variables “nota1” y “nota2”. Asignarle valores a ambas. 
      * Comparar si “nota1” es mayor a “nota2” e imprimir el resultado de la comparación.
      */
-     let output ;
+    let output;
     let nota1 = 8;
-    let nota2 =6;
-    output = "la comparacion es: " + nota1>nota2;
+    let nota2 = 6;
+    output = "la comparacion es: " + nota1 > nota2;
 
     mostrarResultado(output);
 }
-function compraFarmacia(){
+function compraFarmacia() {
     /**
      * Una farmacia hace el 15% de descuento a sus clientes si la compra es mayor a 100 pesos. 
      * Escribir un programa que, dado el monto de una compra como valor numérico, 
@@ -360,16 +360,16 @@ function compraFarmacia(){
 
     let montoCompra = parseFloat(prompt("Ingrese el valor de la compra."));
 
-    if(montoCompra>100){
-        montoCompra = montoCompra *.85;
+    if (montoCompra > 100) {
+        montoCompra = montoCompra * .85;
     }
     let output = "El total a pagar es de $ " + montoCompra;
- 
+
     mostrarResultado(output);
-  
+
 }
 
-function entradasCine(){
+function entradasCine() {
     /**
      * Crear un programa que calcule el pago que hacen un grupo de personas para ver una película 
      * teniendo en cuenta que si el grupo es menor de 8 personas el 
@@ -380,31 +380,30 @@ function entradasCine(){
     let precio = 1.5;
     let precioDescuento = 0.5;
     let total = cantidadEntradas * 0.5;
-    if(cantidadEntradas < 8){
+    if (cantidadEntradas < 8) {
         total = cantidadEntradas * 1.5;
     }
     mostrarResultado('El total a pagar es: ' + total);
 }
 
-function otraComparacionNotas(){
+function otraComparacionNotas() {
     /**
      * Crear un programa que defina las variables “nota1” y “nota2”. 
      * Asignarle valores a ambas. Comparar si “nota1” es mayor a “nota2” 
      * imprimir el mensaje “Nota1 es mayor” o “Nota2 es mayor” según el resultado de la comparación.
      */
-     let output = "Nota2  es mayor";
-     let nota1 = parseFloat(prompt("Ingrese el valor de Nota 1."));
-     let nota2 =parseFloat(prompt("Ingrese el valor de Nota 2."));
-    if (isNaN(nota1) || isNaN(nota2)){
+    let output = "Nota2  es mayor";
+    let nota1 = parseFloat(prompt("Ingrese el valor de Nota 1."));
+    let nota2 = parseFloat(prompt("Ingrese el valor de Nota 2."));
+    if (isNaN(nota1) || isNaN(nota2)) {
         output = "Ingresaste valores invalidos";
     }
-    if (nota1>nota2)
-    {
-    output = "Nota1 es mayor";
+    if (nota1 > nota2) {
+        output = "Nota1 es mayor";
     }
     mostrarResultado(output);
 }
-function valoracionPeliculas(){
+function valoracionPeliculas() {
     /**
      * 
      *  Las puntuaciones de las películas se clasifican en:
@@ -412,7 +411,7 @@ function valoracionPeliculas(){
      *  Crear un programa donde se pide al usuario que ingrese un valor entre 0 a 4. 
      *  Imprimir la clasificación de la película según el valor numérico.
      */
-     let valoracion = prompt("Ingrese la puntuacion de la pelicula. \n Las puntuaciones de las películas se clasifican en: \n 0: mala, 1: regular, 2: buena,3: muy buena, 4: excelente. \n  ");
+    let valoracion = prompt("Ingrese la puntuacion de la pelicula. \n Las puntuaciones de las películas se clasifican en: \n 0: mala, 1: regular, 2: buena,3: muy buena, 4: excelente. \n  ");
     let text = "n";
     console.log(valoracion);
     switch (valoracion) {
@@ -431,7 +430,7 @@ function valoracionPeliculas(){
         case '4':
             text = "excelente";
             break;
-      
+
         default:
             text = "ingresaste una opcion invalida";
             mostrarResultado(text);
@@ -442,7 +441,7 @@ function valoracionPeliculas(){
 
 }
 
-function cuentaRegresiva(dato){
+function cuentaRegresiva(dato) {
 
     /**
      * Crear un programa que imprima una cuenta regresiva de 59 a 0.
@@ -455,7 +454,7 @@ function cuentaRegresiva(dato){
         i--;
     }
 }
-function cuentaHastaCien(){
+function cuentaHastaCien() {
 
     /**
      * Crear un programa que imprima una cuenta regresiva de 0  a 100.
@@ -468,7 +467,7 @@ function cuentaHastaCien(){
         i++;
     }
 }
-function guardaArray(){
+function guardaArray() {
     /**
      * Crear un programa en donde el usuario ingresa números y se guardan en un array. 
      * Al ingresar “-1” se imprimirán los números ingresado junto con sus posiciones dentro del array.
@@ -478,51 +477,51 @@ function guardaArray(){
     let datoIngresado;
 
     do {
-        datoIngresado = parseInt(prompt("Ingresa datos para agregar \n ingresando -1 imprimiras los valosres")) ; 
-        if(datoIngresado != -1){ array.push(datoIngresado);}
-    
+        datoIngresado = parseInt(prompt("Ingresa datos para agregar \n ingresando -1 imprimiras los valosres"));
+        if (datoIngresado != -1) { array.push(datoIngresado); }
+
     } while (datoIngresado != -1);
-    
-    array.forEach(function(element,i) {
+
+    array.forEach(function (element, i) {
         console.log("Indice " + i + "valor " + element);
     });
 
 }
 
-function guardaArrayPromedio(){
+function guardaArrayPromedio() {
     /**
      * Crear un programa en donde el usuario ingresa números hasta que ingresa “-1”, 
      * en dicho caso el programa termina e imprime el promedio de los números ingresados.
      */
     var array = new Array();
-    let datoIngresado=0;
+    let datoIngresado = 0;
     let c = 0;
     let sumatoria = 0;
 
     while (datoIngresado != -1) {
-        datoIngresado = parseInt(prompt("Ingresa Numeros \n ingresando -1 obtendras el promedio")) ; 
-        if(datoIngresado != -1 && !isNaN(datoIngresado)){ array.push(datoIngresado);}
-        
-    } 
-    
-    array.forEach(function(element,i) {
+        datoIngresado = parseInt(prompt("Ingresa Numeros \n ingresando -1 obtendras el promedio"));
+        if (datoIngresado != -1 && !isNaN(datoIngresado)) { array.push(datoIngresado); }
+
+    }
+
+    array.forEach(function (element, i) {
         console.log(element)
         sumatoria += element;
         c++
     });
     console.log(sumatoria);
-    mostrarResultado('El promedio es ' + (sumatoria/c));
+    mostrarResultado('El promedio es ' + (sumatoria / c));
 }
-function preciosProductos(){
+function preciosProductos() {
     /**
      * Crear un programa en donde el usuario ingrese el nombre y el precio de 5 productos, 
      * al finalizar, se listarán en pantalla el nombre y el precio de los productos.
      */
-let datoIngresado;
-let texto;
-let array = new Array();
+    let datoIngresado;
+    let texto;
+    let array = new Array();
     for (let index = 0; index < 5; index++) {
-        datoIngresado = prompt("Ingresa nombre y precio del producto nro " + (index +1) );
+        datoIngresado = prompt("Ingresa nombre y precio del producto nro " + (index + 1));
         array.push(datoIngresado);
     }
 
@@ -533,7 +532,7 @@ let array = new Array();
 
 }
 
-function alturasPromedio(){
+function alturasPromedio() {
 
     /**
      * Se ingresan un conjunto de n alturas de personas por teclado. Mostrar la altura promedio de las personas.
@@ -544,21 +543,142 @@ function alturasPromedio(){
     let index = 0;
     let promedio;
     while (datoIngresado != -1) {
-        datoIngresado = parseFloat(prompt("Ingresa la altura " + (index +1) + "\n para calcular promedio ingrese -1"));
-        if(!isNaN(datoIngresado)){ 
-            sumatoria += datoIngresado ; 
+        datoIngresado = parseFloat(prompt("Ingresa la altura " + (index + 1) + "\n para calcular promedio ingrese -1"));
+        if (!isNaN(datoIngresado)) {
+            sumatoria += datoIngresado;
             index++;
-        }else{
+        } else {
             mostrarResultado("Dato invalido");
         }
-        
-    } 
-               
-        
-        if(index != 0 && sumatoria != 0 ){ 
-            promedio = sumatoria / index; 
-            texto = "el promedio de las alturas es: " + promedio;
-        }else{  text = "hay datos invalidos"; }
-       
-        mostrarResultado(texto);
+    }
+
+    if (index != 0 && sumatoria != 0) {
+        promedio = sumatoria / index;
+        texto = "el promedio de las alturas es: " + promedio;
+    } else { text = "hay datos invalidos"; }
+
+    mostrarResultado(texto);
+}
+
+function nrosBingo() {
+    /**
+     * Crear un Programa que pida al usuario un número 
+     * entre 0 y 25, deberá mostrar por pantalla su significado en el bingo. Ej: 14 = "Borracho"
+     */
+
+    const significados = [
+        { id: 0, nombre: 'Huevos' },
+        { id: 1, nombre: 'Agua' },
+        { id: 2, nombre: 'Niño' },
+        { id: 3, nombre: 'San Cono' },
+        { id: 4, nombre: 'La cama' },
+        { id: 5, nombre: 'Gato' },
+        { id: 6, nombre: 'Perro' },
+        { id: 7, nombre: 'Revolver' },
+        { id: 8, nombre: 'Incendio' },
+        { id: 9, nombre: 'Arroyo' },
+        { id: 10, nombre: 'La Leche' },
+        { id: 11, nombre: 'Minero' },
+        { id: 12, nombre: 'Soldado' },
+        { id: 13, nombre: 'La yeta' },
+        { id: 14, nombre: 'Borracho' },
+        { id: 15, nombre: 'Niña bonita' },
+        { id: 16, nombre: 'Anillo' },
+        { id: 17, nombre: 'Desgracia' },
+        { id: 18, nombre: 'Sangre' },
+        { id: 19, nombre: 'Pescado' },
+        { id: 20, nombre: 'La Fiesta' },
+        { id: 21, nombre: 'Mujer' },
+        { id: 22, nombre: 'Loco' },
+        { id: 23, nombre: 'Cocinero' },
+        { id: 24, nombre: 'Caballo' },
+        { id: 25, nombre: 'Gallina' },
+        { id: 26, nombre: 'La Misa' },
+        { id: 27, nombre: 'El Peine' },
+        { id: 28, nombre: 'El Cerro' },
+        { id: 29, nombre: 'San Pedro' },
+        { id: 30, nombre: 'Santa Rosa' },
+        { id: 31, nombre: 'La Luz' },
+        { id: 32, nombre: 'Dinero' },
+        { id: 33, nombre: 'Cristo' },
+        { id: 34, nombre: 'La Cabeza' },
+        { id: 35, nombre: 'Pajarito' },
+        { id: 36, nombre: 'La Manteca' },
+        { id: 37, nombre: 'El Dentista' },
+        { id: 38, nombre: 'Piedras' },
+        { id: 39, nombre: 'Lluvia' },
+        { id: 40, nombre: 'El cura' },
+        { id: 41, nombre: 'El cuchillo' },
+        { id: 42, nombre: 'Zapatillas' },
+        { id: 43, nombre: 'Balcón' },
+        { id: 44, nombre: 'La Cárcel' },
+        { id: 45, nombre: 'El vino' },
+        { id: 46, nombre: 'Tomates' },
+        { id: 47, nombre: 'Muerto' },
+        { id: 48, nombre: 'Muerto que habla' },
+        { id: 49, nombre: 'La carne' },
+        { id: 50, nombre: 'El Pan' },
+        { id: 51, nombre: 'Serrucho' },
+        { id: 52, nombre: 'Madre e hijo' },
+        { id: 53, nombre: 'El Barco' },
+        { id: 54, nombre: 'La vaca' },
+        { id: 55, nombre: 'La Música' },
+        { id: 56, nombre: 'La caída' },
+        { id: 57, nombre: 'El jorobado' },
+        { id: 58, nombre: 'Ahogado' },
+        { id: 59, nombre: 'Las plantas' },
+        { id: 60, nombre: 'La virgen' },
+        { id: 61, nombre: 'Escopeta' },
+        { id: 62, nombre: 'Inundación' },
+        { id: 63, nombre: 'Casamiento' },
+        { id: 64, nombre: 'Llanto' },
+        { id: 65, nombre: 'El cazador' },
+        { id: 66, nombre: 'Lombriz' },
+        { id: 67, nombre: 'Mordida' },
+        { id: 68, nombre: 'Sobrinos' },
+        { id: 69, nombre: 'Vicios' },
+        { id: 70, nombre: 'Muerto Sueño' },
+        { id: 71, nombre: 'Excremento' },
+        { id: 72, nombre: 'Sorpresa' },
+        { id: 73, nombre: 'Hospital' },
+        { id: 74, nombre: 'Gente Negra' },
+        { id: 75, nombre: 'Los Besos' },
+        { id: 76, nombre: 'Las llamas' },
+        { id: 77, nombre: 'Pierna Mujer' },
+        { id: 78, nombre: 'Ramera' },
+        { id: 79, nombre: 'Ladrón' },
+        { id: 80, nombre: 'La Bocha' },
+        { id: 81, nombre: 'Las Flores' },
+        { id: 82, nombre: 'La pelea' },
+        { id: 83, nombre: 'Mal tiempo' },
+        { id: 84, nombre: 'La iglesia' },
+        { id: 85, nombre: 'Linterna' },
+        { id: 86, nombre: 'El humo' },
+        { id: 87, nombre: 'Piojos' },
+        { id: 88, nombre: 'El papa' },
+        { id: 89, nombre: 'La rata' },
+        { id: 90, nombre: 'El miedo' },
+        { id: 91, nombre: 'Excusado' },
+        { id: 92, nombre: 'El Médico' },
+        { id: 93, nombre: 'Enamorado' },
+        { id: 94, nombre: 'Cementerio' },
+        { id: 95, nombre: 'Anteojos' },
+        { id: 96, nombre: 'Marido' },
+        { id: 97, nombre: 'Mesa' },
+        { id: 98, nombre: 'Lavandera' },
+        { id: 99, nombre: 'Hermano' }
+    ]
+    let valor = parseInt(prompt("Ingrese un nro del 0 al 99 para saber su significado"));
+    if(!isNaN(valor)){
+       let res = significados.find( sig => sig.id === valor);
+       mostrarResultado("El significado es "+res.nombre);
+    }else{
+        mostrarResultado("ingresaste un dato invalido");
+    }
+}
+function nombreCompaneros(){
+    /**
+     * Crear 2 Vectores, uno corresponderá a los nombres y 
+     * otro a los apellidos de 10 compañeros del curso de Fullstack de codo a codo
+     */
 }
