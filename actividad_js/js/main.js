@@ -1,4 +1,8 @@
 
+/**
+ * Nivel 1
+ */
+
 function miNombre() {
     //Mostrar por consola, tu nombre, apellido, comisión y hobbies
 
@@ -162,7 +166,6 @@ if(!isNaN(nota) ){
     console.log("ingresaste datos incorrectos");
 }
 }
-
 function sueldoCategoria(){
     //Crear un programa tal que dado como datos la categoría y el sueldo de un trabajador, calcule el aumento 
     // correspondiente teniendo en cuenta la siguiente tabla. Mostrar con un Alert() la categoría y el nuevo sueldo
@@ -241,7 +244,6 @@ function miNotaMatricula(){
 
 
     }
-
 function nrosEnteros(){
     //Dado 3 números enteros, 
     // determinar cual de ellos es el mayor, tenga en cuenta que los números pueden ser iguales.
@@ -279,15 +281,284 @@ function nrosEnteros(){
 
 
     }
-
-
-
     p.innerHTML = msg ;
     modal2.show();
 
 }
 
+/**
+ * Auxiliares
+ */
 
+function mostrarResultado(texto){
+    let p = document.getElementById('res');
+    let modal = new bootstrap.Modal(document.getElementById('modalRes'));
+    p.innerHTML = texto;
+    modal.show();
+    console.log(texto);
+}
 
+/**
+ * Nivel 2
+ */
+function miSuma(){
+    /*
 
+    Crear un programa que defina tres variables llamadas “variable_a”, “variable_b” y “variable_resultado”. Cargar las primeras dos con los valores numéricos 33 y 77. Sumar ambas variables 
+    y guardar el resultado en la variable “variable_resultado”. Imprimir el resultado por consola.
+    */
+    let variable_a = 33;
+    let variable_b = 77;
+    let variable_resultado = variable_a + variable_b;
+    let output = "el resultado es: " + variable_resultado;
+    console.log(output);
+    mostrarResultado(output);
+}
 
+function nuevoPrmedio(){
+    /**
+     * Crear un programa que defina 5 variables llamadas “a”,“b”...“e” y 
+     * una sexta variable llamada “promedio”. Cargar las 5 variables con valores y calcular el 
+     * promedio de los mismos. Imprimir el resultado por consola.
+     */
+    let a;
+    let b;
+    let c;
+    let d;
+    let e;
+    let promedio;
+
+    a=3;
+    b=5;
+    c=9;
+    d=8;
+    e=6;
+    promedio=(a+b+c+d+e)/5;
+    let output = "el promedio es: " + promedio;
+    console.log(output);
+    mostrarResultado(output);
+}
+
+function comparoNotas(){
+    /**
+     * Crear un programa que defina las variables “nota1” y “nota2”. Asignarle valores a ambas. 
+     * Comparar si “nota1” es mayor a “nota2” e imprimir el resultado de la comparación.
+     */
+     let output ;
+    let nota1 = 8;
+    let nota2 =6;
+    output = "la comparacion es: " + nota1>nota2;
+
+    mostrarResultado(output);
+}
+function compraFarmacia(){
+    /**
+     * Una farmacia hace el 15% de descuento a sus clientes si la compra es mayor a 100 pesos. 
+     * Escribir un programa que, dado el monto de una compra como valor numérico, 
+     * diga cuanto debe abonar el cliente aplicando el descuento si es necesario.
+     */
+
+    let montoCompra = parseFloat(prompt("Ingrese el valor de la compra."));
+
+    if(montoCompra>100){
+        montoCompra = montoCompra *.85;
+    }
+    let output = "El total a pagar es de $ " + montoCompra;
+ 
+    mostrarResultado(output);
+  
+}
+
+function entradasCine(){
+    /**
+     * Crear un programa que calcule el pago que hacen un grupo de personas para ver una película 
+     * teniendo en cuenta que si el grupo es menor de 8 personas el 
+     * pago es de 1.5 pesos por persona y para grupos de 8 personas o más el pago es 0.5 pesos por persona.
+     */
+
+    let cantidadEntradas = parseInt(prompt('Ingresa la cantidad de entradas a comprar'));
+    let precio = 1.5;
+    let precioDescuento = 0.5;
+    let total = cantidadEntradas * 0.5;
+    if(cantidadEntradas < 8){
+        total = cantidadEntradas * 1.5;
+    }
+    mostrarResultado('El total a pagar es: ' + total);
+}
+
+function otraComparacionNotas(){
+    /**
+     * Crear un programa que defina las variables “nota1” y “nota2”. 
+     * Asignarle valores a ambas. Comparar si “nota1” es mayor a “nota2” 
+     * imprimir el mensaje “Nota1 es mayor” o “Nota2 es mayor” según el resultado de la comparación.
+     */
+     let output = "Nota2  es mayor";
+     let nota1 = parseFloat(prompt("Ingrese el valor de Nota 1."));
+     let nota2 =parseFloat(prompt("Ingrese el valor de Nota 2."));
+    if (isNaN(nota1) || isNaN(nota2)){
+        output = "Ingresaste valores invalidos";
+    }
+    if (nota1>nota2)
+    {
+    output = "Nota1 es mayor";
+    }
+    mostrarResultado(output);
+}
+function valoracionPeliculas(){
+    /**
+     * 
+     *  Las puntuaciones de las películas se clasifican en:
+     *  0: mala, 1: regular, 2: buena,3: muy buena, 4: excelente
+     *  Crear un programa donde se pide al usuario que ingrese un valor entre 0 a 4. 
+     *  Imprimir la clasificación de la película según el valor numérico.
+     */
+     let valoracion = prompt("Ingrese la puntuacion de la pelicula. \n Las puntuaciones de las películas se clasifican en: \n 0: mala, 1: regular, 2: buena,3: muy buena, 4: excelente. \n  ");
+    let text = "n";
+    console.log(valoracion);
+    switch (valoracion) {
+        case '0':
+            text = "mala";
+            break;
+        case '1':
+            text = "regular";
+            break;
+        case '2':
+            text = "buena";
+            break;
+        case '3':
+            text = "muy buena";
+            break;
+        case '4':
+            text = "excelente";
+            break;
+      
+        default:
+            text = "ingresaste una opcion invalida";
+            mostrarResultado(text);
+            return;
+            break;
+    }
+    mostrarResultado('la calificacion de la pelicula es: ' + text);
+
+}
+
+function cuentaRegresiva(dato){
+
+    /**
+     * Crear un programa que imprima una cuenta regresiva de 59 a 0.
+     */
+
+    let i = dato;
+
+    while (i >= 0) {
+        console.log(i);
+        i--;
+    }
+}
+function cuentaHastaCien(){
+
+    /**
+     * Crear un programa que imprima una cuenta regresiva de 0  a 100.
+     */
+
+    let i = 0;
+
+    while (i <= 100) {
+        console.log(i);
+        i++;
+    }
+}
+function guardaArray(){
+    /**
+     * Crear un programa en donde el usuario ingresa números y se guardan en un array. 
+     * Al ingresar “-1” se imprimirán los números ingresado junto con sus posiciones dentro del array.
+     * 
+     */
+    var array = new Array();
+    let datoIngresado;
+
+    do {
+        datoIngresado = parseInt(prompt("Ingresa datos para agregar \n ingresando -1 imprimiras los valosres")) ; 
+        if(datoIngresado != -1){ array.push(datoIngresado);}
+    
+    } while (datoIngresado != -1);
+    
+    array.forEach(function(element,i) {
+        console.log("Indice " + i + "valor " + element);
+    });
+
+}
+
+function guardaArrayPromedio(){
+    /**
+     * Crear un programa en donde el usuario ingresa números hasta que ingresa “-1”, 
+     * en dicho caso el programa termina e imprime el promedio de los números ingresados.
+     */
+    var array = new Array();
+    let datoIngresado=0;
+    let c = 0;
+    let sumatoria = 0;
+
+    while (datoIngresado != -1) {
+        datoIngresado = parseInt(prompt("Ingresa Numeros \n ingresando -1 obtendras el promedio")) ; 
+        if(datoIngresado != -1 && !isNaN(datoIngresado)){ array.push(datoIngresado);}
+        
+    } 
+    
+    array.forEach(function(element,i) {
+        console.log(element)
+        sumatoria += element;
+        c++
+    });
+    console.log(sumatoria);
+    mostrarResultado('El promedio es ' + (sumatoria/c));
+}
+function preciosProductos(){
+    /**
+     * Crear un programa en donde el usuario ingrese el nombre y el precio de 5 productos, 
+     * al finalizar, se listarán en pantalla el nombre y el precio de los productos.
+     */
+let datoIngresado;
+let texto;
+let array = new Array();
+    for (let index = 0; index < 5; index++) {
+        datoIngresado = prompt("Ingresa nombre y precio del producto nro " + (index +1) );
+        array.push(datoIngresado);
+    }
+
+    array.forEach(element => {
+        texto += element + '<br>';
+    });
+    mostrarResultado(texto);
+
+}
+
+function alturasPromedio(){
+
+    /**
+     * Se ingresan un conjunto de n alturas de personas por teclado. Mostrar la altura promedio de las personas.
+     */
+    let datoIngresado;
+    let texto;
+    let sumatoria = 0;
+    let index = 0;
+    let promedio;
+    while (datoIngresado != -1) {
+        datoIngresado = parseFloat(prompt("Ingresa la altura " + (index +1) + "\n para calcular promedio ingrese -1"));
+        if(!isNaN(datoIngresado)){ 
+            sumatoria += datoIngresado ; 
+            index++;
+        }else{
+            mostrarResultado("Dato invalido");
+        }
+        
+    } 
+               
+        
+        if(index != 0 && sumatoria != 0 ){ 
+            promedio = sumatoria / index; 
+            texto = "el promedio de las alturas es: " + promedio;
+        }else{  text = "hay datos invalidos"; }
+       
+        mostrarResultado(texto);
+}
