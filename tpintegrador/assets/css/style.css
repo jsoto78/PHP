@@ -103,6 +103,9 @@ display: flex;
     text-decoration: underline;
 
 }
+#tickets{
+    padding-top:  1.3em;;
+}
 .navfooter p{
     padding: 7px 30px;
     border-bottom: 1px solid #fafcff ;
