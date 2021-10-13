@@ -681,4 +681,16 @@ function nombreCompaneros(){
      * Crear 2 Vectores, uno corresponderá a los nombres y 
      * otro a los apellidos de 10 compañeros del curso de Fullstack de codo a codo
      */
+
+    let nombres = [
+        'florencia','jose','joel','gisel','hernan','gonzalo','hector','gabriela','lourdes','lucas'
+    ];
+    let apellidos = [
+        'silva','gimenez','molinari','de la torre','toledo','gimenez','moscardi','kakol','rodriguez','de palma'
+    ];
+
+    console.log(nombres);
+    mostrarResultado(nombres + apellidos);
+    console.log(apellidos);
+
 }
