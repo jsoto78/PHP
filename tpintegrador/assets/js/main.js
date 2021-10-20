@@ -8,3 +8,9 @@ function calcular(){
     p.innerHTML = total;
 
 }
+function borrar(){
+    document.getElementById('txtcant').value = "";
+    document.getElementById('selcategoria').value = "";
+    let p = document.getElementById('total');
+    p.innerHTML = "";
+}
