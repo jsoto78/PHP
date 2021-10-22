@@ -146,5 +146,16 @@ section.oradores{
 .card{
     width: 80%;
     margin: auto;
+    margin-bottom: 20px;
+}
+.col-5{
+    display: none !important;
+}
+.col-6{
+    width: auto !important;
+}
+.rcat {
+
+    display: inline !important;
 }
 }
