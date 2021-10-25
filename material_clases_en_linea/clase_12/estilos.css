@@ -1,0 +1,8 @@
+.section{
+    height: 60vh;
+}
+
+.div-der{
+    background-image: url(img/honolulu.jpg);
+    background-size: cover;
+}
