@@ -1,0 +1,34 @@
+.login-left{
+background-color: aqua;
+
+}
+body{
+margin: 0;
+padding: 0;
+}
+.login-right{
+    background-color: coral;
+}
+.body-login{
+    height: 100vh;
+
+}
+.formlogin{
+    margin: auto;
+    padding: 35% 20%;
+}
+
+@media (max-width: 767px) {
+.login-right{
+    display: none;
+}
+.body-login{
+    height: 105vh;
+
+}
+.login-left{
+    width: 100%;
+    
+    }
+
+}

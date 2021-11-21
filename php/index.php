@@ -9,4 +9,12 @@ echo($inicio.'Editor de codigo: Visual Studio'.$fin) ;
 echo($inicio.'Sistema operativo: '.PHP_OS.$fin); 
 
 // php -S localhost:9000
+
+// foreach ($variable as $key => $value) {
+//     # code...
+// }
+$arr = array();
+
+
+
 ?>
