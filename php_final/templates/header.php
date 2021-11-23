@@ -6,9 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link href="//cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/buttons/2.0.1/css/buttons.bootstrap5.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="//cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+    <script src="//cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+    <script src="//cdn.datatables.net/buttons/2.0.1/js/buttons.bootstrap5.min.js"></script>
+    <script src="//kit.fontawesome.com/8552914272.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -27,10 +35,17 @@
                         <a class="nav-link  <?php   if($_SERVER['SCRIPT_NAME'] == '/movimientos.php') { echo('active'); }?> "  href="movimientos.php">Movimientos</a>
                     </li>
               
-                    <li class="nav-item">
-                        <a  class="nav-link  <?php   if($_SERVER['SCRIPT_NAME'] == '/configuracion.php') { echo('active'); }?> "  href="configuracion.php" >Configuración</a>
-                    </li>
-       
+                    <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                             data-bs-toggle="dropdown" aria-expanded="false">
+                             Configuración
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="usuarios.php" >Usuarios</a></li>
+                                <li><a class="dropdown-item" href="perfiles.php">Perfiles</a></li>
+              
+                            </ul>
+                            </li>
                     </ul>
                     <div class="float-end">
                     <ul class="navbar-nav me-auto">

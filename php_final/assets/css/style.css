@@ -18,6 +18,18 @@ padding: 0;
     padding: 35% 20%;
 }
 
+div.dataTables_wrapper div.dataTables_length select {
+    min-width: 60px;
+    display: inline-block;
+}
+
+
+
+
+
+
+
+/* Medias querys */
 @media (max-width: 767px) {
 .login-right{
     display: none;
