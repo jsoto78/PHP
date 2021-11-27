@@ -17,6 +17,7 @@
     <script src="//cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
     <script src="//cdn.datatables.net/buttons/2.0.1/js/buttons.bootstrap5.min.js"></script>
     <script src="//kit.fontawesome.com/8552914272.js" crossorigin="anonymous"></script>
+    <script src="assets/js/scripts.js"></script>
 </head>
 <body>
     <header>
@@ -68,3 +69,6 @@
     </header>
 </body>
 </html>
+<!-- 
+    Defino la cabesera de todas las paginas.
+-->

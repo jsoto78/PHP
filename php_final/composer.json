@@ -1,0 +1,11 @@
+{
+    "name": "jsoto/php_final",
+    "description": "Proyecto final codo a codo, caja diaria",
+    "authors": [
+        {
+            "name": "Jose Soto",
+            "email": "jsoto@mediacentertv.com.ar"
+        }
+    ],
+    "require": {}
+}

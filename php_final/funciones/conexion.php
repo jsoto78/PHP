@@ -1,4 +1,7 @@
 <?php
+/**
+ * Defino la conexion con mi base de datos.
+ */
    define('DB_SERVER', '192.168.0.4');
    define('DB_USERNAME', 'jsoto');
    define('DB_PASSWORD', 'Santi3009!');

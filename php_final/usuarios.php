@@ -66,25 +66,48 @@ die(mysqli_error($db));
 
     </footer>
 
+<!-- Modal -->
+<div class="modal fade" id="usuarioModal" tabindex="-1" aria-labelledby="usuarioModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="usuarioModalLabel">Usuario</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <div class="row">
+            <div class="col-6">
+                <label for="nombre" class="form-label">Nombre Apellido</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Juan Perez">
+              
+            </div>
+            <div class="col-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="jperez@demo.com">
+              
+            </div>
+       </div>
+       <div class="row">
+        <div class="col">
+            <select class="form-select" aria-label="Perfil">
+                <option value="1">One</option>
+            </select>
+        </div></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" id="btnEliminar" class="btn btn-primary">Eliminar</button>
+        <button type="button" id="btnGuardar" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
     <script>
 
-$(document).ready(function() {
-    $('#usuarios').DataTable({
-        dom: 'Bfrtip',
-        "language": {
-            "url":  "//cdn.datatables.net/plug-ins/1.11.3/i18n/es_es.json"
-        },
-        "buttons": [
-            {
-                text: 'Nuevo Usuario',
-                action: function ( e, dt, node, config ) {
-                    alert( 'Button activated' ); //llamar modal usuario
-                }
-            }
-        ]
-       
-    });
-} );
+
         </script>
 </body>
 </html>
