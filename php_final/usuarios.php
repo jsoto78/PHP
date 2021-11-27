@@ -2,7 +2,7 @@
 <?php
 include 'funciones/auth.php';
 include 'funciones/conexion.php';
-//query
+//query selectionamos los usuarios 
 $sql = "SELECT u.id,email,u.nombre, p.nombre as perfil, DATE_FORMAT(fechaalta,' %d/%m/%Y %k:%i' ),IFNULL(u.fechabaja,'Activo') FROM usuarios u inner join perfiles p on p.id = u.perfilid and u.fechabaja is null";
 $result = mysqli_query($db, $sql);
 
@@ -13,8 +13,20 @@ die(mysqli_error($db));
     while ($row = mysqli_fetch_assoc($result)) {
         $usuarios[] = $row;
     }
+//query selectionamos los perfiles 
+$sql = "SELECT id,nombre  FROM perfiles where fechabaja is null";
+$result = mysqli_query($db, $sql);
+if (!$result) {//si no hay respuesta {
+die(mysqli_error($db));
+}
+    $perfiles = array();
+    while ($row = mysqli_fetch_assoc($result)) {
+        $perfiles[] = $row;
+    }
 // Cerrando conexion
     mysqli_close($db);
+
+
     ?>
 
 
@@ -75,39 +87,57 @@ die(mysqli_error($db));
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+      <form action="funciones/funciones_usuarios.php" autocomplete="off" method="post">
        <div class="row">
             <div class="col-6">
                 <label for="nombre" class="form-label">Nombre Apellido</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Juan Perez">
+                <input type="text" class="form-control" id="nombre"  name="nombre" placeholder="Juan Perez">
               
             </div>
             <div class="col-6">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="jperez@demo.com">
-              
+                <input type="email" class="form-control" id="email"name="email" autocomplete="off" placeholder="jperez@demo.com">
+                <input type="hidden" name="tipo" id="tipo" value="crear">
+                <input type="hidden" name="id" id="id" value="crear">
             </div>
        </div>
+       <div class="row mt-3">
+            <div class="col-6">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="password"  name="password" >
+              
+            </div>
+            <div class="col-6 form-check">
+                <label for="cpassword" class="form-label">Confirma Contraseña</label>
+                <input type="password" class="form-control" id="cpassword"  name="cpassword">
+                <div class="invalid-feedback" id="lblpass">Las contraseñas no coinciden</div>
+              
+            </div>
+        </div>
        <div class="row">
         <div class="col">
-            <select class="form-select" aria-label="Perfil">
-                <option value="1">One</option>
+        
+       
+            <select class="form-select mt-3" name="perfilid" id="perfilid" aria-label="Perfil">
+            <option value="" selected>Selecciona perfil</option>
+            <?php 
+            foreach ($perfiles as $p){
+                echo ' <option value="'.$p["id"].'">'.$p["nombre"].'</option>';
+            } 
+            ?>
             </select>
+            </form>
         </div></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" id="btnEliminar" class="btn btn-primary">Eliminar</button>
-        <button type="button" id="btnGuardar" class="btn btn-primary">Guardar</button>
+        <button type="button" id="btnEliminarUsuario" class="btn btn-primary">Eliminar</button>
+        <button type="submit" id="btnGuardarUsuario" class="btn btn-primary">Guardar</button>
       </div>
     </div>
   </div>
 </div>
 
 
-
-    <script>
-
-
-        </script>
 </body>
 </html>
