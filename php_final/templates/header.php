@@ -30,10 +30,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link <?php  if($_SERVER['SCRIPT_NAME'] == '/index.php') { echo('active'); }?> " aria-current="page" href="index.php">Inicio</a>
+                        <a class="nav-link  <?php  if($_SERVER['SCRIPT_NAME'] == '/index.php') { echo('active'); }?> " aria-current="page" href="index.php">Inicio</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link  <?php   if($_SERVER['SCRIPT_NAME'] == '/movimientos.php') { echo('active'); }?> "  href="movimientos.php">Movimientos</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"  href="#" role="button"
+                             data-bs-toggle="dropdown" aria-expanded="false" >Movimientos</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="nuevomovimiento.php">Nuevo</a></li>
+                                <li><a class="dropdown-item" href="derivadores.php">Cierre</a></li>
+                          
+                            </ul>
                     </li>
               
                     <li class="nav-item dropdown">
@@ -44,7 +50,8 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="usuarios.php" >Usuarios</a></li>
                                 <li><a class="dropdown-item" href="perfiles.php">Perfiles</a></li>
-              
+                                <li><a class="dropdown-item" href="derivadores.php">Derivadores</a></li>
+                                <li><a class="dropdown-item" href="medios_pago.php">Medios de pago</a></li>
                             </ul>
                             </li>
                     </ul>

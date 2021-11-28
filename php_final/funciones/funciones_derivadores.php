@@ -7,23 +7,22 @@ include 'conexion.php';
     $nombre = $_POST["nombre"];
 
     switch ($_POST["tipo"]) {
-        case 'crear': //inserto nuevo perfil en la bd
-            $pass = $_POST["password"];
-            $sql = "INSERT into perfiles (nombre) values ('".$nombre."')";
+        case 'crear': //inserto nuevo derivador en la bd
+            $sql = "INSERT into derivadores (nombre) values ('".$nombre."')";
             $result = mysqli_query($db,$sql);
             if($result){
                 //inserto ok
-                header("location: /perfiles.php");    
+                header("location: /derivadores.php");    
             }else{
                 echo "ERROR: no se pudo ejecutar la query ". $sql. " ". mysqli_error($db);
             }
             break;
-        case 'editar': //Edito los perfiles
-            $sql = "update perfiles set nombre = '".$nombre."', fechabaja = NULL where id = ".$_POST["id"]." ";
+        case 'editar': //Edito los derivadores
+            $sql = "update derivadores set nombre = '".$nombre."', fechabaja = NULL where id = ".$_POST["id"]." ";
             $result = mysqli_query($db,$sql);
             if($result){
                 //actualizo ok y redirijo a la pag.
-                header("location: /perfiles.php");    
+                header("location: /derivadores.php");    
             }else{
                 //muestro error 
                 echo "ERROR: no se pudo ejecutar la query ". $sql. " ". mysqli_error($db);
@@ -31,12 +30,12 @@ include 'conexion.php';
             break;
             var_dump(http_response_code(200));
             break;
-        case 'borrar': //doy la baja del perfil
-            $sql = "update perfiles set fechabaja = '".date("Y-m-d H:i:s")."' where id = ".$_POST["id"]." ";
+        case 'borrar': //doy la baja del derivador
+            $sql = "update derivadores set fechabaja = '".date("Y-m-d H:i:s")."' where id = ".$_POST["id"]." ";
             $result = mysqli_query($db,$sql);
             if($result){
                 //elimino ok y vuelvo a la pag.
-                header("location: /perfiles.php");    
+                header("location: /derivadores.php");    
             }else{
                 echo "ERROR: no se pudo ejecutar la query ". $sql. " ". mysqli_error($db);
             }

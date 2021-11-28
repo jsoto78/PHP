@@ -2,32 +2,31 @@
 <?php
 include 'funciones/auth.php';
 include 'funciones/conexion.php';
-//query selectionamos los usuarios 
+//query selectionamos los usuarios
 $sql = "SELECT u.id,email,u.nombre, p.nombre as perfil, DATE_FORMAT(fechaalta,' %d/%m/%Y %k:%i' ),IFNULL(DATE_FORMAT(u.fechabaja,' %d/%m/%Y %k:%i' ),'Activo'),u.perfilid FROM usuarios u inner join perfiles p on p.id = u.perfilid ";
 $result = mysqli_query($db, $sql);
 
-if (!$result) {//si no hay respuesta {
-die(mysqli_error($db));
+if (!$result) { //si no hay respuesta {
+    die(mysqli_error($db));
 }
-    $usuarios = array();
-    while ($row = mysqli_fetch_assoc($result)) {
-        $usuarios[] = $row;
-    }
-//query selectionamos los perfiles 
+$usuarios = array();
+while ($row = mysqli_fetch_assoc($result)) {
+    $usuarios[] = $row;
+}
+//query selectionamos los perfiles
 $sql = "SELECT id,nombre  FROM perfiles where fechabaja is null";
 $result = mysqli_query($db, $sql);
-if (!$result) {//si no hay respuesta {
-die(mysqli_error($db));
+if (!$result) { //si no hay respuesta {
+    die(mysqli_error($db));
 }
-    $perfiles = array();
-    while ($row = mysqli_fetch_assoc($result)) {
-        $perfiles[] = $row;
-    }
+$perfiles = array();
+while ($row = mysqli_fetch_assoc($result)) {
+    $perfiles[] = $row;
+}
 // Cerrando conexion
-    mysqli_close($db);
+mysqli_close($db);
 
-
-    ?>
+?>
 
 
 
@@ -45,8 +44,9 @@ die(mysqli_error($db));
     </head>
     <main>
 <div class="container mt-5">
+<h3 class="text-center mb-4">Usuarios</h3>
     <div class="row">
-    
+
         <div class="col-12">
             <table id="usuarios" class="display" style="width:100%">
             <thead>
@@ -63,10 +63,10 @@ die(mysqli_error($db));
  </thead>
  <tbody>
 <?php foreach ($usuarios as $row): array_map('htmlentities', $row);?>
-	 <tr>
-	 <td class="text-center"><?php echo implode('</td><td class="text-center">', $row); ?></td> <td><a class="btnEdit" data-id="<?php echo $row["id"]?>" data-perfilid="<?php echo $row["perfilid"]?>" data-nombre="<?php echo $row["nombre"]?>" data-email="<?php echo $row["email"]?>"><i class="fas fa-edit" ></i></a></td>
-	 </tr>
-	 <?php endforeach;?>
+		 <tr>
+		 <td class="text-center"><?php echo implode('</td><td class="text-center">', $row); ?></td> <td><a class="btnEdit" data-id="<?php echo $row["id"] ?>" data-perfilid="<?php echo $row["perfilid"] ?>" data-nombre="<?php echo $row["nombre"] ?>" data-email="<?php echo $row["email"] ?>"><i class="fas fa-edit" ></i></a></td>
+		 </tr>
+		 <?php endforeach;?>
  </tbody>
  </table>
 
@@ -93,7 +93,7 @@ die(mysqli_error($db));
             <div class="col-6">
                 <label for="nombre" class="form-label">Nombre Apellido</label>
                 <input type="text" class="form-control" id="nombre"  name="nombre" placeholder="Juan Perez">
-              
+
             </div>
             <div class="col-6">
                 <label for="email" class="form-label">Email</label>
@@ -106,28 +106,28 @@ die(mysqli_error($db));
             <div class="col-6">
                 <label for="password" class="form-label">Contraseña</label>
                 <input type="password" class="form-control" id="password"  name="password" >
-              
+
             </div>
             <div class="col-6 form-check">
                 <label for="cpassword" class="form-label">Confirma Contraseña</label>
                 <input type="password" class="form-control" id="cpassword"  name="cpassword">
                 <div class="invalid-feedback" id="lblpass">Las contraseñas no coinciden</div>
-              
+
             </div>
         </div>
        <div class="row">
         <div class="col-6">
-        
-       
+
+
             <select class="form-select mt-3" name="perfilid" id="perfilid" aria-label="Perfil">
             <option value="" selected>Selecciona perfil</option>
-            <?php 
-            foreach ($perfiles as $p){
-                echo ' <option value="'.$p["id"].'">'.$p["nombre"].'</option>';
-            } 
-            ?>
+            <?php
+foreach ($perfiles as $p) {
+    echo ' <option value="' . $p["id"] . '">' . $p["nombre"] . '</option>';
+}
+?>
             </select>
-    
+
         </div>
         <div class="col-6">
         <div class="form-check form-switch mt-4">
