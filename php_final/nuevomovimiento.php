@@ -1,7 +1,7 @@
 <?php 
 include('funciones/auth.php');
 include 'funciones/conexion.php';
-//query selectionamos los perfiles 
+//query selectionamos datos 
 $sql = "SELECT id ,nombre, IFNULL(DATE_FORMAT(fechabaja,' %d/%m/%Y %k:%i' ),'Activo') as baja from derivadores ";
 $result = mysqli_query($db, $sql);
 
@@ -16,7 +16,7 @@ die(mysqli_error($db));
 $sql = "SELECT id ,nombre, IFNULL(DATE_FORMAT(fechabaja,' %d/%m/%Y %k:%i' ),'Activo') as baja from medios_pago ";
 $result = mysqli_query($db, $sql);
 
-if (!$result) {//si no hay respuesta {
+if (!$result) {//si no hay respuesta 
 die(mysqli_error($db));
 }
     $mpago = array();
@@ -24,8 +24,20 @@ die(mysqli_error($db));
     while ($row = mysqli_fetch_assoc($result)) {
         $mpago[] = $row;
     }
+
+    $sql = "SELECT id ,nombre from sedes ";
+    $result = mysqli_query($db, $sql);
+    
+    if (!$result) {//si no hay respuesta 
+    die(mysqli_error($db));
+    }
+        $sedes = array();
+    
+        while ($row = mysqli_fetch_assoc($result)) {
+            $sedes[] = $row;
+        }
 // Cerrando conexion
-    mysqli_close($db);
+mysqli_close($db);
 ?>
 
 
@@ -57,28 +69,38 @@ die(mysqli_error($db));
                                 <label for="nombre" class="form-label">Tipo de Movimiento</label>
                                 <select class="form-select" name="tipo" id="tipo" aria-label="tipo">
                                     <option value="" selected>Seleccioná un tipo</option>
-                                    <option value="I" >Ingreso</option>
-                                    <option value="E" >Egreso</option>
-                                    <option value="A" >Ajuste</option>
+                                    <option value="I">Ingreso</option>
+                                    <option value="E">Egreso</option>
+                                    <option value="A">Ajuste</option>
                                 </select>
 
                             </div>
                             <div class="col-6">
                                 <label for="valor" class="form-label">Monto</label>
                                 <input type="number" class="form-control" id="valor" name="valor" autocomplete="off">
-                                <input type="hidden" name="usuarioid" id="usuarioid" value="ses">
+                                <input type="hidden" name="usuarioid" id="usuarioid"
+                                    value="<?php echo $_SESSION['usuarioid'] ?>">
                             </div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-4">
+                            <div class="col-3">
                                 <label for="paciente_hc" class="form-label">Paciente HC</label>
                                 <input type="number" class="form-control" id="paciente_hc" name="paciente_hc">
 
                             </div>
-                            <div class="col-8">
+                            <div class="col-6">
                                 <label for="paciente_nombre" class="form-label">Paciente Nombre</label>
                                 <input type="text" class="form-control" id="paciente_nombre" name="paciente_nombre">
                             </div>
+                            <div class="col-3">
+                                <label for="sedeid" class="form-label">Sede</label>
+                                <select class="form-select" name="sedeid" id="sedeid" aria-label="sedeid">
+                                    <?php foreach ($sedes as $key => $s) {
+                                echo '<option value="'.$s["id"].'" '. ($s["id"] == $_SESSION["sedeid"])?'selected':''.' >'.$s["nombre"].'</option>' ;
+                                } ?>
+                                </select>
+                            </div>
+
                         </div>
                         <div class="row mt-3">
                             <div class="col-8">
@@ -89,14 +111,14 @@ die(mysqli_error($db));
                                 <label for="deriva" class="form-label">Deriva</label>
                                 <select class="form-select" name="deriva" id="deriva" aria-label="tipo">
                                     <option value="" selected>Seleccioná un tipo</option>
-                                <?php foreach ($derivadores as $key => $d) {
+                                    <?php foreach ($derivadores as $key => $d) {
                                 echo '<option value="'.$d["id"].'" >'.$d["nombre"].'</option>' ;
                                 } ?>
                                 </select>
                             </div>
                         </div>
                         <div class="row mt-3">
-                        <div class="col-8">
+                            <div class="col-8">
                                 <label for="practica" class="form-label">Practica</label>
                                 <input type="text" class="form-control" id="practica" name="practica">
                             </div>
@@ -104,17 +126,22 @@ die(mysqli_error($db));
                                 <label for="deriva" class="form-label">Medio de pago</label>
                                 <select class="form-select" name="mediopago" id="mediopago" aria-label="mediopago">
                                     <option value="" selected>Seleccioná un Medio de pago</option>
-                                <?php foreach ($mpago as $key => $m) {
+                                    <?php foreach ($mpago as $key => $m) {
                                 echo '<option value="'.$m["id"].'" >'.$m["nombre"].'</option>' ;
                                 } ?>
                                 </select>
                             </div>
                         </div>
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <textarea name="observaciones" id="observaciones" rows="5" cols="12" class="form-control">
+                                </textarea>
+                            </div>
+                        </div>
 
-                
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-success">Guardar</button>
-                </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success">Guardar</button>
+                        </div>
                 </div>
 
                 </form>

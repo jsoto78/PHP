@@ -216,7 +216,26 @@ $(document).ready(function () {
         });
     });
     /**
-     * 
+     * transac
      */
 
+    $("#paciente_hc").change(function(){
+        let hc = $(this).val();
+        $.ajax({ //hago el post
+            type: "GET",
+            url: "https://gorostiaga.centrolerner.com.ar:8300/api/v4/getPaciente/"+hc,
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader ("Authorization", "Basic anNvdG9AbTIyYXBwcy5jb206U2FudGkzMDA5");
+            },
+            success: llenarPaciente(data),
+            error: function(err){
+                console.log(JSON.stringify(err));
+            }
+        });
+    });
+    let llenarPaciente = function (data){  
+        $("#paciente_nombre").val(data.Nombres + ' ' + data.Apellido);
+        $("#paciente_nombre").prop('disabled',true);  
+    }
+    
 });

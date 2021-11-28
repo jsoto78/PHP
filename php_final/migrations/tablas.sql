@@ -52,3 +52,12 @@ fechabaja DATETIME NULL
 ENGINE=InnoDB
 DEFAULT CHARSET=utf8mb4
 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE caja_php.sedes (
+id INT auto_increment KEY NOT NULL,
+	nombre varchar(200) NOT NULL,
+fechabaja DATETIME NULL
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_0900_ai_ci;
