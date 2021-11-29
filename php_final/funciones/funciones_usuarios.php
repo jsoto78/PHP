@@ -6,11 +6,12 @@ include 'conexion.php';
     $nombre = $_POST["nombre"];
     $email = $_POST["email"];
     $perfilid = $_POST["perfilid"];
+    $sedeid = $_POST["sedeid"];
 
     switch ($_POST["tipo"]) {
         case 'crear':
             $pass = $_POST["password"];
-            $sql = "INSERT into usuarios (nombre,email,password,perfilid) values ('".$nombre."','".$email."','".password_hash($pass, PASSWORD_DEFAULT)."',".$perfilid.")";
+            $sql = "INSERT into usuarios (nombre,email,password,perfilid,sedeid) values ('".$nombre."','".$email."','".password_hash($pass, PASSWORD_DEFAULT)."',".$perfilid.",".$sedeid.")";
             $result = mysqli_query($db,$sql);
             if($result){
                 //inserto ok
@@ -22,10 +23,10 @@ include 'conexion.php';
         case 'editar':
             $pass = $_POST["password"];
             if(strlen($pass) > 3){
-                $sql = "update usuarios set nombre = '".$nombre."',email = '".$email."', password = '".password_hash($pass, PASSWORD_DEFAULT)."' ,perfilid = ".$perfilid.", fechabaja = NULL where id = ".$_POST["id"]." ";
+                $sql = "update usuarios set nombre = '".$nombre."',email = '".$email."', password = '".password_hash($pass, PASSWORD_DEFAULT)."' ,perfilid = ".$perfilid.", fechabaja = NULL , sedeid = ".$sedeid." where id = ".$_POST["id"]." ";
             }
             else{
-                $sql = "update usuarios set nombre = '".$nombre."',email = '".$email."',perfilid = ".$perfilid." , fechabaja = NULL where id = ".$_POST["id"]." ";
+                $sql = "update usuarios set nombre = '".$nombre."',email = '".$email."',perfilid = ".$perfilid." , fechabaja = NULL, sedeid = ".$sedeid." where id = ".$_POST["id"]." ";
             }
             $result = mysqli_query($db,$sql);
             if($result){

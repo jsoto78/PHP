@@ -3,7 +3,7 @@
 include 'funciones/auth.php';
 include 'funciones/conexion.php';
 //query selectionamos los usuarios
-$sql = "SELECT u.id,email,u.nombre, p.nombre as perfil, DATE_FORMAT(fechaalta,' %d/%m/%Y %k:%i' ),IFNULL(DATE_FORMAT(u.fechabaja,' %d/%m/%Y %k:%i' ),'Activo'),u.perfilid FROM usuarios u inner join perfiles p on p.id = u.perfilid ";
+$sql = "SELECT u.id,email,u.nombre, p.nombre as perfil, DATE_FORMAT(fechaalta,' %d/%m/%Y %k:%i' ),IFNULL(DATE_FORMAT(u.fechabaja,' %d/%m/%Y %k:%i' ),'Activo'),u.perfilid,u.sedeid FROM usuarios u inner join perfiles p on p.id = u.perfilid ";
 $result = mysqli_query($db, $sql);
 
 if (!$result) { //si no hay respuesta {
@@ -22,6 +22,16 @@ if (!$result) { //si no hay respuesta {
 $perfiles = array();
 while ($row = mysqli_fetch_assoc($result)) {
     $perfiles[] = $row;
+}
+//query selectionamos las sedes
+$sql = "SELECT id,nombre  FROM sedes where fechabaja is null";
+$result = mysqli_query($db, $sql);
+if (!$result) { //si no hay respuesta {
+    die(mysqli_error($db));
+}
+$sedes = array();
+while ($row = mysqli_fetch_assoc($result)) {
+    $sedes[] = $row;
 }
 // Cerrando conexion
 mysqli_close($db);
@@ -59,12 +69,13 @@ mysqli_close($db);
       <th>Fecha de Baja</th>
       <th></th>
       <th></th>
+      <th></th>
 </tr>
  </thead>
  <tbody>
 <?php foreach ($usuarios as $row): array_map('htmlentities', $row);?>
 		 <tr>
-		 <td class="text-center"><?php echo implode('</td><td class="text-center">', $row); ?></td> <td><a class="btnEdit" data-id="<?php echo $row["id"] ?>" data-perfilid="<?php echo $row["perfilid"] ?>" data-nombre="<?php echo $row["nombre"] ?>" data-email="<?php echo $row["email"] ?>"><i class="fas fa-edit" ></i></a></td>
+		 <td class="text-center"><?php echo implode('</td><td class="text-center">', $row); ?></td> <td><a class="btnEdit" data-sedeid="<?php echo $row["sedeid"] ?>" data-id="<?php echo $row["id"] ?>" data-perfilid="<?php echo $row["perfilid"] ?>" data-nombre="<?php echo $row["nombre"] ?>" data-email="<?php echo $row["email"] ?>"><i class="fas fa-edit" ></i></a></td>
 		 </tr>
 		 <?php endforeach;?>
  </tbody>
@@ -115,24 +126,39 @@ mysqli_close($db);
 
             </div>
         </div>
-       <div class="row">
+       <div class="row mt-3">
         <div class="col-6">
-
-
-            <select class="form-select mt-3" name="perfilid" id="perfilid" aria-label="Perfil">
+        <label for="perfilid" class="form-label">Perfil</label>
+            <select class="form-select" name="perfilid" id="perfilid" aria-label="Perfil">
             <option value="" selected>Selecciona perfil</option>
             <?php
-foreach ($perfiles as $p) {
-    echo ' <option value="' . $p["id"] . '">' . $p["nombre"] . '</option>';
-}
+            foreach ($perfiles as $p) {
+                echo ' <option value="' . $p["id"] . '">' . $p["nombre"] . '</option>';
+            }
 ?>
             </select>
 
         </div>
         <div class="col-6">
+        <label for="sedeid" class="form-label">Sede</label>
+            <select class="form-select" name="sedeid" id="sedeid" aria-label="Sede">
+            <option value="" selected>Selecciona Sede</option>
+            <?php
+                foreach ($sedes as $s) {
+                    echo ' <option value="' . $s["id"] . '">' . $s["nombre"] . '</option>';
+                }
+?>
+            </select>
+
+        </div>
+        </div>
+       <div class="row mt-3">
+       <div class="col-6">
+</div>
+        <div class="col-6">
         <div class="form-check form-switch mt-4">
         <input class="form-check-input" type="checkbox" id="checkCambioPass" checked>
-        <label class="form-check-label" for="checkCambioPass">Cambiar Contraseña</label>
+        <label class="form-check-label" for="checkCambioPass">Ingresar Contraseña</label>
         </div>
         </div>
     </div>

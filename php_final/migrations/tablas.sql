@@ -6,8 +6,9 @@ CREATE TABLE `usuarios` (
   `fechaalta` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `fechabaja` datetime DEFAULT NULL,
   `nombre` varchar(200) DEFAULT NULL,
+  `sedeid` int DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
 CREATE TABLE `perfiles` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -15,6 +16,15 @@ CREATE TABLE `perfiles` (
   `fechabaja` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE caja_php.sedes (
+id INT auto_increment KEY NOT NULL,
+	nombre varchar(200) NOT NULL,
+fechabaja DATETIME NULL
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_0900_ai_ci;
 
 CREATE TABLE caja_php.transac (
 	id INT auto_increment KEY NOT NULL,

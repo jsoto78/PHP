@@ -4,12 +4,6 @@ $(document).ready(function () {
      * Usuarios
      */
     $('#usuarios').DataTable({ //Inicializa el datatable
-        "columnDefs": [
-            {
-                "targets": [6],
-                "visible": false,
-                "searchable": false
-            },],
         dom: 'Bfrtip',
         "language": {
             "url": "//cdn.datatables.net/plug-ins/1.11.3/i18n/es_es.json" // Idioma
@@ -22,9 +16,22 @@ $(document).ready(function () {
                     $('#usuarioModal').modal('show');
                 }
             }
+        ],
+        "columnDefs": [
+            {
+                "targets": [6],
+                "visible": false,
+                "searchable": false
+            },
+            {
+                "targets": [7],
+                "visible": false,
+                "searchable": false
+            },
         ]
 
     });
+
 
     $("#btnEliminarUsuario").click(() => {
         //Elimino el usuario 
@@ -68,6 +75,7 @@ $(document).ready(function () {
         $('#email').val($(this).data('email'));
         $('#id').val($(this).data('id'));
         $('#perfilid').val($(this).data('perfilid'));
+        $('#sedeid').val($(this).data('sedeid'));
         $('#tipo').val('editar');
         $("#checkCambioPass").prop("checked", false);
         $("#password").prop("disabled", true);
@@ -227,15 +235,16 @@ $(document).ready(function () {
             beforeSend: function (xhr) {
                 xhr.setRequestHeader ("Authorization", "Basic anNvdG9AbTIyYXBwcy5jb206U2FudGkzMDA5");
             },
-            success: llenarPaciente(data),
+            success: llenarPaciente,
             error: function(err){
                 console.log(JSON.stringify(err));
             }
         });
     });
     let llenarPaciente = function (data){  
+        console.log(data)
         $("#paciente_nombre").val(data.Nombres + ' ' + data.Apellido);
-        $("#paciente_nombre").prop('disabled',true);  
+        $("#paciente_nombre").prop('readonly',true);  
     }
     
 });

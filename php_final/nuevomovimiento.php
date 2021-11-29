@@ -63,7 +63,7 @@ mysqli_close($db);
             <div class="row">
                 <div class="col-1"></div>
                 <div class="col-10">
-                    <form action="" method="post">
+                    <form action="/funciones/funciones_transac.php" method="post">
                         <div class="row">
                             <div class="col-6">
                                 <label for="nombre" class="form-label">Tipo de Movimiento</label>
@@ -79,7 +79,7 @@ mysqli_close($db);
                                 <label for="valor" class="form-label">Monto</label>
                                 <input type="number" class="form-control" id="valor" name="valor" autocomplete="off">
                                 <input type="hidden" name="usuarioid" id="usuarioid"
-                                    value="<?php echo $_SESSION['usuarioid'] ?>">
+                                    value="<?php echo $_SESSION['id'] ?>">
                             </div>
                         </div>
                         <div class="row mt-3">
@@ -96,7 +96,8 @@ mysqli_close($db);
                                 <label for="sedeid" class="form-label">Sede</label>
                                 <select class="form-select" name="sedeid" id="sedeid" aria-label="sedeid">
                                     <?php foreach ($sedes as $key => $s) {
-                                echo '<option value="'.$s["id"].'" '. ($s["id"] == $_SESSION["sedeid"])?'selected':''.' >'.$s["nombre"].'</option>' ;
+                                        $re = ($s["id"] == $_SESSION["sedeid"])?'selected':'' ;
+                                echo '<option value="'.$s["id"].'" '.$re.' >'.$s["nombre"].'</option>' ;
                                 } ?>
                                 </select>
                             </div>
@@ -140,7 +141,7 @@ mysqli_close($db);
                         </div>
 
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-success">Guardar</button>
+                            <button type="submit" class="btn btn-info">Guardar</button>
                         </div>
                 </div>
 

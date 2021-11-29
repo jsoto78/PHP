@@ -39,22 +39,22 @@ die(mysqli_error($db));
     <div class="col-2"></div>
         <div class="col-8">
             <table id="derivadores" class="display" style="width:100%">
-            <thead>
- <tr>
-      <th>ID</th>
-      <th>Descipción</th>
-      <th>Fecha de Baja</th>
-      <th></th>
-</tr>
- </thead>
- <tbody>
-<?php foreach ($derivadores as $row): array_map('htmlentities', $row);?>
-	 <tr>
-	 <td class="text-center"><?php echo implode('</td><td class="text-center">', $row); ?></td> <td><a class="btnEditDerivador" data-id="<?php echo $row["id"]?>" data-nombre="<?php echo $row["nombre"]?>"><i class="fas fa-edit" ></i></a></td>
-	 </tr>
-	 <?php endforeach;?>
- </tbody>
- </table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Descipción</th>
+                    <th>Fecha de Baja</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($derivadores as $row): array_map('htmlentities', $row);?>
+                        <tr>
+                        <td class="text-center"><?php echo implode('</td><td class="text-center">', $row); ?></td> <td><a class="btnEditDerivador" data-id="<?php echo $row["id"]?>" data-nombre="<?php echo $row["nombre"]?>"><i class="fas fa-edit" ></i></a></td>
+                        </tr>
+                        <?php endforeach;?>
+                </tbody>
+            </table>
 
         </div>
 
