@@ -19,7 +19,7 @@ include('funciones/conexion.php');
     $usuario = $_POST["email"];
     $pass = $_POST["password"];
 
-    $sql = "SELECT email,password,nombre,sedeid,id FROM usuarios WHERE email = '$usuario' ";
+    $sql = "SELECT email,password,nombre,sedeid,id FROM usuarios WHERE email = '$usuario' and fechabaja is null";
     $result = mysqli_query($db,$sql);
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     $count = mysqli_num_rows($result);

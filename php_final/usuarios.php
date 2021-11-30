@@ -103,12 +103,12 @@ mysqli_close($db);
        <div class="row">
             <div class="col-6">
                 <label for="nombre" class="form-label">Nombre Apellido</label>
-                <input type="text" class="form-control" id="nombre"  name="nombre" placeholder="Juan Perez">
+                <input type="text" required class="form-control" id="nombre"  name="nombre" placeholder="Juan Perez">
 
             </div>
             <div class="col-6">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email"name="email" autocomplete="off" placeholder="jperez@demo.com">
+                <input type="email" required class="form-control" id="email"name="email" autocomplete="off" placeholder="jperez@demo.com">
                 <input type="hidden" name="tipo" id="tipo" value="crear">
                 <input type="hidden" name="id" id="id" value="crear">
             </div>
@@ -116,12 +116,12 @@ mysqli_close($db);
        <div class="row mt-3">
             <div class="col-6">
                 <label for="password" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="password"  name="password" >
+                <input type="password" class="form-control" id="password"  name="password" required>
 
             </div>
             <div class="col-6 form-check">
                 <label for="cpassword" class="form-label">Confirma Contraseña</label>
-                <input type="password" class="form-control" id="cpassword"  name="cpassword">
+                <input type="password" class="form-control" id="cpassword"  name="cpassword" required>
                 <div class="invalid-feedback" id="lblpass">Las contraseñas no coinciden</div>
 
             </div>
@@ -129,7 +129,7 @@ mysqli_close($db);
        <div class="row mt-3">
         <div class="col-6">
         <label for="perfilid" class="form-label">Perfil</label>
-            <select class="form-select" name="perfilid" id="perfilid" aria-label="Perfil">
+            <select class="form-select" name="perfilid" id="perfilid" aria-label="Perfil" required>
             <option value="" selected>Selecciona perfil</option>
             <?php
             foreach ($perfiles as $p) {
@@ -141,7 +141,7 @@ mysqli_close($db);
         </div>
         <div class="col-6">
         <label for="sedeid" class="form-label">Sede</label>
-            <select class="form-select" name="sedeid" id="sedeid" aria-label="Sede">
+            <select class="form-select" name="sedeid" id="sedeid" aria-label="Sede" required>
             <option value="" selected>Selecciona Sede</option>
             <?php
                 foreach ($sedes as $s) {

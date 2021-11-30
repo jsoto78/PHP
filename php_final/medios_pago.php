@@ -78,7 +78,7 @@ die(mysqli_error($db));
        <div class="row">
             <div class="col-12">
                 <label for="nombre" class="form-label">Descripción</label>
-                <input type="text" class="form-control" id="nombre"  name="nombre" placeholder="Usuario">
+                <input type="text" required class="form-control" id="nombre"  name="nombre" placeholder="Usuario">
                 <input type="hidden" name="tipo" id="tipo" value="crear">
                 <input type="hidden" name="id" id="id" >
             </div>

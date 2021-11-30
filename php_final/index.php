@@ -48,7 +48,7 @@ mysqli_close($db);
         <?php foreach ($estado as $key => $e) {
           echo '<div class="col card small-box bg-info" style="margin:5px">
           <div class="card-body">
-            <h5 class="card-title text-center"> Sede ' .$e["nombre"]. ' '.$e["mpago"] .'</h5>
+            <h5 class="card-title text-center"> Sede ' .$e["nombre"]. '<BR /> '.$e["mpago"] .'</h5>
             <p class="card-text text-center"> $ ' .$e["total"]. '.- </p>
           </div>
         </div>';

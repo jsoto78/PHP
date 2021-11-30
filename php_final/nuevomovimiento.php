@@ -67,7 +67,7 @@ mysqli_close($db);
                         <div class="row">
                             <div class="col-6">
                                 <label for="nombre" class="form-label">Tipo de Movimiento</label>
-                                <select class="form-select" name="tipo" id="tipo" aria-label="tipo">
+                                <select class="form-select" required name="tipo" id="tipo" aria-label="tipo">
                                     <option value="" selected>Seleccioná un tipo</option>
                                     <option value="I">Ingreso</option>
                                     <option value="E">Egreso</option>
@@ -77,7 +77,7 @@ mysqli_close($db);
                             </div>
                             <div class="col-6">
                                 <label for="valor" class="form-label">Monto</label>
-                                <input type="number" class="form-control" id="valor" name="valor" autocomplete="off">
+                                <input type="number" required class="form-control" id="valor" name="valor" required autocomplete="off">
                                 <input type="hidden" name="usuarioid" id="usuarioid"
                                     value="<?php echo $_SESSION['id'] ?>">
                             </div>
@@ -94,7 +94,7 @@ mysqli_close($db);
                             </div>
                             <div class="col-3">
                                 <label for="sedeid" class="form-label">Sede</label>
-                                <select class="form-select" name="sedeid" id="sedeid" aria-label="sedeid">
+                                <select class="form-select" name="sedeid" id="sedeid" required aria-label="sedeid">
                                     <?php foreach ($sedes as $key => $s) {
                                         $re = ($s["id"] == $_SESSION["sedeid"])?'selected':'' ;
                                 echo '<option value="'.$s["id"].'" '.$re.' >'.$s["nombre"].'</option>' ;
@@ -109,8 +109,8 @@ mysqli_close($db);
                                 <input type="text" class="form-control" id="profesional" name="profesional">
                             </div>
                             <div class="col-4">
-                                <label for="deriva" class="form-label">Deriva</label>
-                                <select class="form-select" name="deriva" id="deriva" aria-label="tipo">
+                                <label for="deriva"  class="form-label">Deriva</label>
+                                <select class="form-select" name="deriva" id="deriva" aria-label="tipo" required>
                                     <option value="" selected>Seleccioná un tipo</option>
                                     <?php foreach ($derivadores as $key => $d) {
                                 echo '<option value="'.$d["id"].'" >'.$d["nombre"].'</option>' ;
@@ -121,11 +121,11 @@ mysqli_close($db);
                         <div class="row mt-3">
                             <div class="col-8">
                                 <label for="practica" class="form-label">Practica</label>
-                                <input type="text" class="form-control" id="practica" name="practica">
+                                <input type="text" required class="form-control" id="practica" name="practica">
                             </div>
                             <div class="col-4">
                                 <label for="deriva" class="form-label">Medio de pago</label>
-                                <select class="form-select" name="mediopago" id="mediopago" aria-label="mediopago">
+                                <select class="form-select" required name="mediopago" id="mediopago" aria-label="mediopago">
                                     <option value="" selected>Seleccioná un Medio de pago</option>
                                     <?php foreach ($mpago as $key => $m) {
                                 echo '<option value="'.$m["id"].'" >'.$m["nombre"].'</option>' ;
@@ -135,8 +135,7 @@ mysqli_close($db);
                         </div>
                         <div class="row mt-3">
                             <div class="col-12">
-                                <textarea name="observaciones" id="observaciones" rows="5" cols="12" class="form-control">
-                                </textarea>
+                                <textarea name="observaciones" id="observaciones" rows="5" cols="12" class="form-control"></textarea>
                             </div>
                         </div>
 

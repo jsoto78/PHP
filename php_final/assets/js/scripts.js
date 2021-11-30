@@ -32,7 +32,6 @@ $(document).ready(function () {
 
     });
 
-
     $("#btnEliminarUsuario").click(() => {
         //Elimino el usuario 
 
