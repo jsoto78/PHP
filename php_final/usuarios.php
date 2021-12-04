@@ -58,7 +58,7 @@ mysqli_close($db);
     <div class="row">
 
         <div class="col-12">
-            <table id="usuarios" class="display" style="width:100%">
+            <table id="usuarios" class="display hover" style="width:100%">
             <thead>
  <tr>
       <th>ID</th>
@@ -99,31 +99,38 @@ mysqli_close($db);
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form action="/funciones/funciones_usuarios.php" autocomplete="off" method="post">
+      <form action="/funciones/funciones_usuarios.php" class="con-validacion" autocomplete="off" method="post" novalidate>
        <div class="row">
             <div class="col-6">
                 <label for="nombre" class="form-label">Nombre Apellido</label>
-                <input type="text" required class="form-control" id="nombre"  name="nombre" placeholder="Juan Perez">
-
+                <input type="text" required class="form-control" id="nombre"  name="nombre" required placeholder="Juan Perez">
+                <div class="invalid-feedback">
+                                Tenes que ingresar el nombre.
+                                </div>
             </div>
             <div class="col-6">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" required class="form-control" id="email"name="email" autocomplete="off" placeholder="jperez@demo.com">
+                <input type="email" required class="form-control" id="email"name="email" autocomplete="off" required placeholder="jperez@demo.com">
                 <input type="hidden" name="tipo" id="tipo" value="crear">
                 <input type="hidden" name="id" id="id" value="crear">
+                <div class="invalid-feedback">
+                              Ingresa El mail.
+                                </div>
             </div>
        </div>
        <div class="row mt-3">
             <div class="col-6">
                 <label for="password" class="form-label">Contraseña</label>
                 <input type="password" class="form-control" id="password"  name="password" required>
-
+                <div class="invalid-feedback">
+                              Ingresa la una contraseña
+                                </div>
             </div>
             <div class="col-6 form-check">
                 <label for="cpassword" class="form-label">Confirma Contraseña</label>
                 <input type="password" class="form-control" id="cpassword"  name="cpassword" required>
                 <div class="invalid-feedback" id="lblpass">Las contraseñas no coinciden</div>
-
+               
             </div>
         </div>
        <div class="row mt-3">
@@ -137,7 +144,9 @@ mysqli_close($db);
             }
 ?>
             </select>
-
+            <div class="invalid-feedback">
+                             Selecciona el perfil.
+                                </div>
         </div>
         <div class="col-6">
         <label for="sedeid" class="form-label">Sede</label>
@@ -149,7 +158,9 @@ mysqli_close($db);
                 }
 ?>
             </select>
-
+            <div class="invalid-feedback">
+                              Selecciona una sede.
+                                </div>
         </div>
         </div>
        <div class="row mt-3">

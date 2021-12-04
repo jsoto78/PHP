@@ -15,6 +15,7 @@
 <?php 
 include('funciones/conexion.php');
  session_start();
+ $error = "";
  if($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuario = $_POST["email"];
     $pass = $_POST["password"];
@@ -34,11 +35,13 @@ include('funciones/conexion.php');
         header("Location: index.php");
     }
     else{
-        echo '<div class="alert alert-danger" role="alert">contraseña incorrecta</div>';
+        $error = "pass";
+       
     }
     }
     else{
-       echo '<div class="alert alert-danger" role="alert">No existe el usuario</div>';
+        $error = "usr";
+       
     }
 } 
 
@@ -69,10 +72,15 @@ include('funciones/conexion.php');
     
                         <div class="mt-3">
                             <a class="text-decoration-none password-recovery"
-                                href="/password/reset.php">¿ Olvidaste
-                                tu contraseña ?</a>
+                                href="/password_reset.php">¿ Olvidaste tu contraseña ?</a>
                         </div>
-                 
+                 <?php 
+                 if($error == "pass"){
+                    echo '<div class="alert alert-danger" role="alert">contraseña incorrecta</div>';
+                 }elseif($error == "usr"){
+                    echo '<div class="alert alert-danger" role="alert">No existe el usuario</div>';
+                 }
+                 ?>
                     </form>
                 </div>
             </div>

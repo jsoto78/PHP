@@ -4,9 +4,7 @@
 include 'conexion.php';
  if($_SERVER["REQUEST_METHOD"] == "POST") {
 
-  
     $nombre = $_POST["nombre"];
-
     switch ($_POST["tipo"]) {
         case 'crear': //inserto nuevo derivador en la bd
             $sql = "INSERT into derivadores (nombre) values ('".$nombre."')";
@@ -45,6 +43,7 @@ include 'conexion.php';
             # code...
             break;
     }
+    
 } 
 
 ?>

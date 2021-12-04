@@ -35,8 +35,16 @@ div.dataTables_wrapper div.dataTables_length select {
 .btn-info{
     color: #fff;
 }
-
-
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #14caf0;
+    border-color: #14caf0;
+}
+a {
+    color: #14caf0;
+    text-decoration: underline;
+}
 
 /* Medias querys */
 @media (max-width: 767px) {

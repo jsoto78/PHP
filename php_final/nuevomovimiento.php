@@ -60,10 +60,15 @@ mysqli_close($db);
     <main>
         <div class="container mt-5">
             <h3 class="text-center mb-4">Movimientos</h3>
+            <?php if(isset($_GET["error"])){
+                if($_GET["error"] == "SM"){
+                    echo '<div class="alert alert-danger" role="alert">Debe ingresar un monto</div>';
+                }
+            } ?>
             <div class="row">
                 <div class="col-1"></div>
                 <div class="col-10">
-                    <form action="/funciones/funciones_transac.php" method="post">
+                    <form action="/funciones/funciones_transac.php" class="con-validacion" method="post" novalidate>
                         <div class="row">
                             <div class="col-6">
                                 <label for="nombre" class="form-label">Tipo de Movimiento</label>
@@ -73,20 +78,25 @@ mysqli_close($db);
                                     <option value="E">Egreso</option>
                                     <option value="A">Ajuste</option>
                                 </select>
-
+                                <div class="invalid-feedback">
+                                Selecciona un tipo de movimiento
+                                </div>
                             </div>
                             <div class="col-6">
                                 <label for="valor" class="form-label">Monto</label>
                                 <input type="number" required class="form-control" id="valor" name="valor" required autocomplete="off">
                                 <input type="hidden" name="usuarioid" id="usuarioid"
                                     value="<?php echo $_SESSION['id'] ?>">
+                                    <div class="invalid-feedback">
+                                Ingresa el monto de la operacion
+                                </div>
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col-3">
                                 <label for="paciente_hc" class="form-label">Paciente HC</label>
                                 <input type="number" class="form-control" id="paciente_hc" name="paciente_hc">
-
+                              
                             </div>
                             <div class="col-6">
                                 <label for="paciente_nombre" class="form-label">Paciente Nombre</label>
@@ -107,6 +117,9 @@ mysqli_close($db);
                             <div class="col-8">
                                 <label for="profesional" class="form-label">Profesional Nombre</label>
                                 <input type="text" class="form-control" id="profesional" name="profesional">
+                                <div class="invalid-feedback">
+                                Ingresa el profesional.
+                                </div>
                             </div>
                             <div class="col-4">
                                 <label for="deriva"  class="form-label">Deriva</label>
@@ -116,12 +129,18 @@ mysqli_close($db);
                                 echo '<option value="'.$d["id"].'" >'.$d["nombre"].'</option>' ;
                                 } ?>
                                 </select>
+                                <div class="invalid-feedback">
+                                Selecciona quien lo deriva.
+                                </div>
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col-8">
                                 <label for="practica" class="form-label">Practica</label>
                                 <input type="text" required class="form-control" id="practica" name="practica">
+                                <div class="invalid-feedback">
+                                Ingresa la práctica.
+                                </div>
                             </div>
                             <div class="col-4">
                                 <label for="deriva" class="form-label">Medio de pago</label>
@@ -131,6 +150,9 @@ mysqli_close($db);
                                 echo '<option value="'.$m["id"].'" >'.$m["nombre"].'</option>' ;
                                 } ?>
                                 </select>
+                                <div class="invalid-feedback">
+                                Seleccioná el medio de pago.
+                                </div>
                             </div>
                         </div>
                         <div class="row mt-3">

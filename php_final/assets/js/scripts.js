@@ -14,8 +14,9 @@ $(document).ready(function () {
                 action: function (e, node, config) {
                     //llamar modal usuario
                     $('#usuarioModal').modal('show');
-                }
-            }
+                },
+                className: 'btn btn-info'
+            } 
         ],
         "columnDefs": [
             {
@@ -68,7 +69,6 @@ $(document).ready(function () {
     let habilitarFormUsuario = (estado) => {
         $("#btnGuardarUsuario").prop('disabled', estado);
     }
-
     $(document).on("click", ".btnEdit", function () {
         $('#nombre').val($(this).data('nombre'));
         $('#email').val($(this).data('email'));
@@ -93,6 +93,21 @@ $(document).ready(function () {
         }
     });
 
+    //validar form
+    var forms = document.querySelectorAll('.con-validacion'); //Busco el formulario
+    Array.prototype.slice.call(forms) 
+    .forEach(function (form) { //valido todos los campos del form.
+        form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+        }
+        form.classList.add('was-validated')
+        }, false)
+    });
+
+
+
 
     /**
      *  Perfiles
@@ -108,7 +123,8 @@ $(document).ready(function () {
                 action: function (e, node, config) {
                     //llamar modal usuario
                     $('#perfilModal').modal('show');
-                }
+                },
+                className: 'btn btn-info'
             }
         ]
 
@@ -151,7 +167,8 @@ $(document).ready(function () {
                 action: function (e, node, config) {
                     //llamar modal usuario
                     $('#medioPagolModal').modal('show');
-                }
+                },
+                className: 'btn btn-info'
             }
         ]
 
@@ -195,7 +212,8 @@ $(document).ready(function () {
                 action: function (e, node, config) {
                     //llamar modal usuario
                     $('#derivadorModal').modal('show');
-                }
+                },
+                className: 'btn btn-info'
             }
         ]
 

@@ -17,6 +17,7 @@ session_start();
         if($tiempo_transcurrido >= 600) {
             session_destroy();
             header("Location: login.php");
+            exit();
         }else {
             $_SESSION["ultimoAcceso"] = $ahora;
         }
