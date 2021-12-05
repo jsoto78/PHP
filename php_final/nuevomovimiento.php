@@ -2,6 +2,7 @@
 include('funciones/auth.php');
 include 'funciones/conexion.php';
 //query selectionamos datos 
+$where = " ";
 $sql = "SELECT id ,nombre, IFNULL(DATE_FORMAT(fechabaja,' %d/%m/%Y %k:%i' ),'Activo') as baja from derivadores ";
 $result = mysqli_query($db, $sql);
 
@@ -26,7 +27,7 @@ die(mysqli_error($db));
     }
     $where = " ";
     if($_SESSION["perfilid"] != 1){ // si no es admin no puede cambiar sede
-        $where = ' where sedeid = '.$_SESSION["sedeid"].' ';
+        $where = ' where id = '.$_SESSION["sedeid"].' ';
         }
     $sql = "SELECT id ,nombre from sedes ".$where ;
     $result = mysqli_query($db, $sql);
@@ -119,7 +120,7 @@ mysqli_close($db);
                         <div class="row mt-3">
                             <div class="col-8">
                                 <label for="profesional" class="form-label">Profesional Nombre</label>
-                                <input type="text" class="form-control" id="profesional" name="profesional">
+                                <input type="text" class="form-control" id="profesional" required name="profesional">
                                 <div class="invalid-feedback">
                                 Ingresa el profesional.
                                 </div>

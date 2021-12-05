@@ -89,8 +89,10 @@ include('funciones/conexion.php');
                 </div>
             </div>
             <div class="col-6 pt-4 login-right">
-            
-            <p class="text-white position-absolute bottom-0 end-0">Sistema de caja</p>
+            <div class="text-white position-absolute bottom-0 end-0 me-1 p-2">
+            <p class="text-white p-1">Sistema de caja</p>
+            </div>
+          
             </div>
 
 </div>

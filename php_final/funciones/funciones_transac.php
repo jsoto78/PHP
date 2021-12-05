@@ -39,7 +39,7 @@ include 'conexion.php';
            exit();
     }
     
-    if (isset($_POST["paciente_hc"])){
+    if (isset($_POST["paciente_hc"]) && $_POST["paciente_hc"] != "" ){
         $paciente_hc = $_POST["paciente_hc"];
     }
     
