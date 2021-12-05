@@ -64,7 +64,7 @@
                                 <?php echo '<span>'.$_SESSION["nombre"].'</span>' ?> 
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Perfil</a></li>
+   
                                 <li><a class="dropdown-item" href="logout.php">Salir</a></li>
          
                             </ul>

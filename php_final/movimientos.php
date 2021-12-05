@@ -3,15 +3,15 @@ include 'funciones/auth.php';
 include 'funciones/conexion.php';
 $where = '';
 if($_SESSION["perfilid"] != 1){
-$where = ' where t.sedeid = '.$_SESSION["sedeid"].' ';
+$where = ' and t.sedeid = '.$_SESSION["sedeid"].' ';
 }
 //query selectionamos los movientos
 $sql = "select t.id ,DATE_FORMAT(t.fecha,'%d/%m/%Y %k:%i hs' ), t.tipo , u.nombre as usuario,t.valor ,paciente_hc ,paciente_nombre , t.profesional_nombre, d.nombre as deriva ,practica 
-,mp.nombre as mediopago,t.observaciones ,s.nombre as sede from transac t ".$where."
+,mp.nombre as mediopago,t.observaciones ,s.nombre as sede from transac t 
 inner join usuarios u on u.id = t.usuarioid
 inner join derivadores d on d.id  = t.deriva
 INNER JOIN medios_pago mp on mp.id = t.medio_pago
-INNER JOIN sedes s on s.id  = t.sedeid where 1 = 1 ";
+INNER JOIN sedes s on s.id  = t.sedeid where 1 = 1 ".$where;
 
 $fechai;
 $fechaf;
@@ -83,17 +83,15 @@ while ($row = mysqli_fetch_assoc($result)) {
                     </div>
                     <div class="col-2">
                         <div class="mt-2">
-                            <button type="submit" class="btn btn-info btn-filtrar">Filtrar</button>
-                            <button type="button" class="btn btn-info btn-filtrar">Limpiar</button>
+                            <button type="submit"  class="btn btn-info btn-filtrar">Filtrar</button>
+                            <button type="button" id="btnlimpiar" class="btn btn-info btn-filtrar">Limpiar</button>
                         </div>
                     </div>
                   
                 </div>
             </form>
-            <div class="row">
-
             </div>
-            <div class="row">
+            <div class="row ms-2 mt-2">
                 <div class="col-12">
                     <table id="movimientos" class="display" style="width:100%">
                         <thead>
@@ -111,7 +109,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                                 <th>Medio de Pago</th>
                                 <th>Obs</th>
                                 <th>Sede</th>
-                                <th></th>
+                   
 
                             </tr>
                         </thead>
@@ -121,12 +119,14 @@ while ($row = mysqli_fetch_assoc($result)) {
                                 <td class="text-center">
                                     <?php echo implode('</td><td class="text-center">', $row); ?>
                                 </td>
-                                <td><a class="btnEditMoviento"  ><i
-                                            class="fas fa-edit"></i></a></td>
+                                
                             </tr>
                             <?php endforeach;?>
                         </tbody>
                     </table>
+                </div>
+            </div>
+       
     </main>
     <footer>
 

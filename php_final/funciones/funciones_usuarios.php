@@ -31,7 +31,7 @@ include 'conexion.php';
             $result = mysqli_query($db,$sql);
             if($result){
                 //actualizo ok
-                header("location: /usuarios.php");    
+                header("location: ./../usuarios.php");    
             }else{
                 echo "ERROR: no se pudo ejecutar la query ". $sql. " ". mysqli_error($db);
             }
@@ -43,7 +43,7 @@ include 'conexion.php';
             $result = mysqli_query($db,$sql);
             if($result){
                 //elimino ok
-                header("location: /usuarios.php");    
+                header("location: ./../usuarios.php");    
             }else{
                 echo "ERROR: no se pudo ejecutar la query ". $sql. " ". mysqli_error($db);
             }

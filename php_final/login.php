@@ -55,10 +55,10 @@ include('funciones/conexion.php');
             <div class="col-6 login-left">
                 <div class="formlogin">
 
-                    <form class="text-center" method="POST" action="login.php">
+                    <form method="POST" action="login.php">
                     
                     <div class="mb-3">
-                        <label for="email" class="form-label">Usuario</label>
+                        <label for="email" class="form-label text-start">Usuario</label>
                             <input type="email" name="email" class="form-control form-control-lg" placeholder="Ingresá tu email"
                                required>
                     </div>
@@ -68,13 +68,16 @@ include('funciones/conexion.php');
                             <input id="password" name="password" type="password" class="form-control form-control-lg"
                                 placeholder="Ingresá tu contraseña" required>
                         </div>
-    
-                        <button type="submit" class="btn btn-secondary">Ingresar</button>
-    
-                        <div class="mt-3">
-                            <a class="text-decoration-none password-recovery"
-                                href="/password_reset.php">¿ Olvidaste tu contraseña ?</a>
+                    <div class="row">
+                
+                        <div class="col align-self-end">
+                            <button type="submit" class="btn btn-info d-block m-auto">Ingresar</button>
                         </div>
+                    </div>
+                    
+                      
+    
+             
                  <?php 
                  if($error == "pass"){
                     echo '<div class="alert alert-danger" role="alert">contraseña incorrecta</div>';
@@ -87,6 +90,7 @@ include('funciones/conexion.php');
             </div>
             <div class="col-6 pt-4 login-right">
             
+            <p class="text-white position-absolute bottom-0 end-0">Sistema de caja</p>
             </div>
 
 </div>

@@ -1,13 +1,21 @@
 .login-left{
-background-color: aqua;
+background-color: #fff;
 
 }
 body{
 margin: 0;
 padding: 0;
+background-color: #f9f5f5c9;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
 }
 .login-right{
-    background-color: coral;
+   
+    background-image: url('./../img/login_bg.jpg');
+    background-position: left;
+    background-size: cover;
 }
 .body-login{
     height: 100vh;

@@ -13,7 +13,7 @@ include 'conexion.php';
             $result = mysqli_query($db,$sql);
             if($result){
                 //inserto ok
-                header("location: /medios_pago.php");    
+                header("location: ./../medios_pago.php");    
             }else{
                 echo "ERROR: no se pudo ejecutar la query ". $sql. " ". mysqli_error($db);
             }
@@ -23,7 +23,7 @@ include 'conexion.php';
             $result = mysqli_query($db,$sql);
             if($result){
                 //actualizo ok y redirijo a la pag.
-                header("location: /medios_pago.php");    
+                header("location: ./../medios_pago.php");    
             }else{
                 //muestro error 
                 echo "ERROR: no se pudo ejecutar la query ". $sql. " ". mysqli_error($db);
@@ -36,7 +36,7 @@ include 'conexion.php';
             $result = mysqli_query($db,$sql);
             if($result){
                 //elimino ok y vuelvo a la pag.
-                header("location: /medios_pago.php");    
+                header("location: ./../medios_pago.php");    
             }else{
                 echo "ERROR: no se pudo ejecutar la query ". $sql. " ". mysqli_error($db);
             }

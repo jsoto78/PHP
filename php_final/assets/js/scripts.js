@@ -264,12 +264,15 @@ $(document).ready(function () {
         $("#paciente_nombre").prop('readonly',true);  
     }
 
+/**Movimientos */
+        $('#movimientos').DataTable({ //Inicializa el datatable 
+                dom: 'Bfrtip',
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.11.3/i18n/es_es.json" // Idioma
+                },
 
-$('#movimientos').DataTable({ //Inicializa el datatable 
-        dom: 'Bfrtip',
-        "language": {
-            "url": "//cdn.datatables.net/plug-ins/1.11.3/i18n/es_es.json" // Idioma
-        },
-
-    });
+            });
+        $('#btnlimpiar').click(function(){
+            location.replace("./movimientos.php");
+        })
 });
