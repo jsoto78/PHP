@@ -20,7 +20,7 @@ include('funciones/conexion.php');
     $usuario = $_POST["email"];
     $pass = $_POST["password"];
 
-    $sql = "SELECT email,password,nombre,sedeid,id FROM usuarios WHERE email = '$usuario' and fechabaja is null";
+    $sql = "SELECT email,password,nombre,sedeid,id,perfilid  FROM usuarios WHERE email = '$usuario' and fechabaja is null";
     $result = mysqli_query($db,$sql);
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     $count = mysqli_num_rows($result);
@@ -31,6 +31,7 @@ include('funciones/conexion.php');
         $_SESSION["ultimoAcceso"] = $ahora;
         $_SESSION["nombre"] = $row["nombre"];
         $_SESSION["sedeid"] = $row["sedeid"];
+        $_SESSION["perfilid"] = $row["perfilid"];
         $_SESSION["id"] = $row["id"];
         header("Location: index.php");
     }

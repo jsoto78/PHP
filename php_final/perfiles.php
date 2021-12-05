@@ -74,13 +74,16 @@ die(mysqli_error($db));
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form action="/funciones/funciones_perfiles.php" autocomplete="off" method="post">
+      <form action="/funciones/funciones_perfiles.php" autocomplete="off" class="con-validacion" method="post" novalidate>
        <div class="row">
             <div class="col-12">
                 <label for="nombre" class="form-label">Descripción</label>
                 <input type="text" class="form-control" id="nombre"  name="nombre" required placeholder="Usuario">
                 <input type="hidden" name="tipo" id="tipo" value="crear">
                 <input type="hidden" name="id" id="id" >
+                <div class="invalid-feedback">
+                              Ingresa una Descripción
+                                </div>
             </div>
            
        </div>

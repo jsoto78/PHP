@@ -24,8 +24,11 @@ die(mysqli_error($db));
     while ($row = mysqli_fetch_assoc($result)) {
         $mpago[] = $row;
     }
-
-    $sql = "SELECT id ,nombre from sedes ";
+    $where = " ";
+    if($_SESSION["perfilid"] != 1){ // si no es admin no puede cambiar sede
+        $where = ' where sedeid = '.$_SESSION["sedeid"].' ';
+        }
+    $sql = "SELECT id ,nombre from sedes ".$where ;
     $result = mysqli_query($db, $sql);
     
     if (!$result) {//si no hay respuesta 
@@ -68,7 +71,7 @@ mysqli_close($db);
             <div class="row">
                 <div class="col-1"></div>
                 <div class="col-10">
-                    <form action="/funciones/funciones_transac.php" class="con-validacion" method="post" novalidate>
+                    <form action="funciones/funciones_transac.php" class="con-validacion" method="post" novalidate>
                         <div class="row">
                             <div class="col-6">
                                 <label for="nombre" class="form-label">Tipo de Movimiento</label>

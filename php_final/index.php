@@ -2,17 +2,25 @@
 <?php 
 include('funciones/auth.php');
 include 'funciones/conexion.php';
-
+$where = '';
+if($_SESSION["perfilid"] != 1){
+$where = ' and sedeid = '.$_SESSION["sedeid"].' ';
+}
 $sql = "select sum(total) as total,s.nombre, mp.nombre as mpago from
-(select sum(valor) as total,sedeid,medio_pago from transac where tipo = 'I' 
+(
+select sum(valor) as total,sedeid,medio_pago from transac where tipo = 'I' and medio_pago = 1 ".$where."
 GROUP by sedeid,medio_pago
 UNION 
-select IFNULL(sum(valor)*-1 ,0)as total ,sedeid ,medio_pago  from transac where tipo = 'E'
+select IFNULL(sum(valor)*-1 ,0)as total ,sedeid ,medio_pago  from transac where tipo = 'E'  and medio_pago = 1 ".$where."
+GROUP by sedeid,medio_pago
+UNION 
+select IFNULL(sum(valor) ,0)as total ,sedeid ,medio_pago  from transac where tipo = 'I'  and medio_pago != 1  ".$where." and  fecha BETWEEN CURDATE() - INTERVAL 0 DAY AND CURDATE() + INTERVAL 1 DAY
 GROUP by sedeid,medio_pago
 )x
 inner JOIN sedes s on s.id = x.sedeid
 INNER JOIN medios_pago mp on mp.id = x.medio_pago
 GROUP by s.nombre , mp.nombre ";
+
 $result = mysqli_query($db, $sql);
     
 if (!$result) {//si no hay respuesta 

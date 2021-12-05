@@ -31,7 +31,9 @@ div.dataTables_wrapper div.dataTables_length select {
     position: relative;
     color: #fff;
   }
-
+.btn-filtrar{
+    margin-top: 22px;
+}
 .btn-info{
     color: #fff;
 }

@@ -263,5 +263,13 @@ $(document).ready(function () {
         $("#paciente_nombre").val(data.Nombres + ' ' + data.Apellido);
         $("#paciente_nombre").prop('readonly',true);  
     }
-    
+
+
+$('#movimientos').DataTable({ //Inicializa el datatable 
+        dom: 'Bfrtip',
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.11.3/i18n/es_es.json" // Idioma
+        },
+
+    });
 });

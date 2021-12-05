@@ -37,11 +37,11 @@
                              data-bs-toggle="dropdown" aria-expanded="false" >Movimientos</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="nuevomovimiento.php">Nuevo</a></li>
-                                <li><a class="dropdown-item" href="derivadores.php">Cierre</a></li>
+                                <li><a class="dropdown-item" href="movimientos.php">Ver</a></li>
                           
                             </ul>
                     </li>
-              
+              <?php     if($_SESSION["perfilid"] == 1){ // si no es admin no puede cambiar administrar  ?>
                     <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                              data-bs-toggle="dropdown" aria-expanded="false">
@@ -53,7 +53,8 @@
                                 <li><a class="dropdown-item" href="derivadores.php">Derivadores</a></li>
                                 <li><a class="dropdown-item" href="medios_pago.php">Medios de pago</a></li>
                             </ul>
-                            </li>
+                    </li>
+                    <?php } ?>
                     </ul>
                     <div class="float-end">
                     <ul class="navbar-nav me-auto">

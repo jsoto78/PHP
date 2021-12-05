@@ -35,7 +35,7 @@ include 'conexion.php';
         $monto = $_POST["valor"];
     }else{
            // si no viene el usuario lo mando a login.
-           header("Location: nuevomovimiento.php?error='SM'");
+           header("Location: ./../nuevomovimiento.php?error='SM'");
            exit();
     }
     
@@ -72,7 +72,7 @@ include 'conexion.php';
     $result = mysqli_query($db,$sql);
     if($result){
         //inserto ok
-      header("location: /nuevomovimiento.php");   
+      header("location: ./../nuevomovimiento.php");   
      //  echo " query ". $sql. " ". mysqli_error($db);
 
     }else{
